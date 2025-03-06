@@ -1,7 +1,7 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% load i18n %}
-
+{% load humanize %}
 {% block content %}
 <div class="container mt-5">
     <h2 class="mb-4">{% trans "Mon Panier" %}</h2>
@@ -23,7 +23,7 @@
                             <p class="text-muted">{{ item.product.description|truncatewords:20 }}</p>
                         </div>
                         <div class="col-md-2">
-                            <div class="price">{{ item.product.price }} {% trans "FCFA" %}</div>
+                            <div class="price">{{ item.product.price|intcomma }} {% trans "FCFA" %}</div>
                         </div>
                         <div class="col-md-2">
                             <div class="quantity-controls">
@@ -47,7 +47,7 @@
                             
                         </div>
                         <div class="col-md-1">
-                            <div class="total-price">{{ item.total_price }} {% trans "FCFA" %}</div>
+                            <div class="total-price">{{ item.total_price|intcomma}} {% trans "FCFA" %}</div>
                         </div>
                         <div class="col-md-1">
                             <button class="btn btn-danger btn-sm btn-remove" data-url="{% url 'remove_cart_item' item.id %}" 
@@ -84,10 +84,10 @@
                         </a>
                         {% endif %}
                     </div>
-                
+                <br>
                     <!-- Section avec total et bouton Passer la commande -->
                     <div class="col-12 col-md-12 text-center text-md-right">
-                        <h4>{% trans "Total:" %} <span id="cart-total">{{ total }} {% trans "FCFA" %}</span></h4>
+                        <h4>{% trans "Total:" %} <span id="cart-total">{{ total|intcomma }} {% trans "FCFA" %}</span></h4>
                         <button class="btn btn-success btn-lg mt-2 proceed-to-checkout"
                             onclick="window.location.href='{% url 'checkout' %}';">
                             {% trans "Passer la commande" %} <i class="fas fa-arrow-right"></i>

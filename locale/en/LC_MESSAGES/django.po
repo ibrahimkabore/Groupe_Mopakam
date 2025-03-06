@@ -901,7 +901,7 @@ msgstr "NAME AND FIRST NAME"
 #: .\app_mopakam\templates\pages\connexion.html:35
 #: .\app_mopakam\templates\pages\connexion.html:62
 msgid "Email"
-msgstr "EMAIL"
+msgstr "EMAIL "
 
 #: .\app_mopakam\templates\pages\connexion.html:36
 #: .\app_mopakam\templates\pages\contact.html:33

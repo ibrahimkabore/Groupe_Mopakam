@@ -1,7 +1,7 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% load i18n %}
-
+{% load humanize %}
 {% block content %}
 <div class="container mt-5">
     <div class="row">
@@ -29,10 +29,10 @@
                                 <span class="badge bg-secondary">{{ item.quantity }}</span>
                             </div>
                             <div class="col-md-2 text-center">
-                                {{ item.product.price }} FCFA
+                                {{ item.product.price|intcomma }} FCFA
                             </div>
                             <div class="col-md-2 text-end">
-                                {{ item.total_price }} FCFA
+                                {{ item.total_price|intcomma }} FCFA
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between mb-3">
                         <span>{% trans "Sous-total" %}</span>
-                        <strong>{{ subtotal }} FCFA</strong>
+                        <strong>{{ subtotal|intcomma }} FCFA</strong>
                     </div>
                     <div class="d-flex justify-content-between mb-3">
                         <span>{% trans "Frais de livraison" %}</span>
@@ -94,7 +94,7 @@
                     <hr>
                     <div class="d-flex justify-content-between mb-3">
                         <h5>{% trans "Total" %}</h5>
-                        <h5>{{ total }} FCFA</h5>
+                        <h5>{{ total|intcomma }} FCFA</h5>
                     </div>
                     <div class="mt-4">
                         <a href="{% url 'product_list' %}" class="btn btn-outline-primary w-100 mb-2">

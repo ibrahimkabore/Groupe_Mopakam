@@ -553,7 +553,7 @@ class Order(BaseModel):
     updated_at = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=2, choices=STATUS_CHOICES, default='EA')
     payment_method = models.CharField(max_length=2, choices=PAYMENT_CHOICES)
-    total = models.DecimalField(max_digits=10, decimal_places=2)
+    total = models.DecimalField(max_digits=10, decimal_places=0)
 
     def __str__(self):
         return f"Commande {self.ref} - {self.user.email}"
@@ -669,5 +669,5 @@ class OrderLine(models.Model):
     order = models.ForeignKey(Order, related_name='lines', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     quantity = models.PositiveIntegerField()
-    unit_price = models.DecimalField(max_digits=10, decimal_places=0)
+    unit_price = models.DecimalField(max_digits=10, decimal_places=0) 
     line_total = models.DecimalField(max_digits=10, decimal_places=0)

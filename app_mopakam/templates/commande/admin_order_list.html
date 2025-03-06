@@ -1,7 +1,7 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% load i18n %}
-
+{% load humanize %}
 {% block content %}
 <div class="container mt-4">
     <!-- Statistiques -->
@@ -18,7 +18,7 @@
             <div class="card bg-success text-white">
                 <div class="card-body">
                     <h5 class="card-title">Chiffre d'affaires</h5>
-                    <h2>{{ total_revenue }} FCFA</h2>
+                    <h2>{{ total_revenue|intcomma }} FCFA</h2>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
                             <td>{{ order.ref }}</td>
                             <td>{{ order.user.get_full_name }}</td>
                             <td>{{ order.created_at|date:"d/m/Y H:i" }}</td>
-                            <td>{{ order.total }} FCFA</td>
+                            <td>{{ order.total|intcomma }} FCFA</td>
                             <td>
                                 <span class="badge {% if order.status == 'EA' %}bg-warning{% elif order.status == 'TE' %}bg-success{% elif order.status == 'AN' %}bg-danger{% endif %}">
                                     {{ order.get_status_display }}
