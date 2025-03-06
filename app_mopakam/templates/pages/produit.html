@@ -1,0 +1,197 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<main>
+    <div class="section_produit ook_section layout_padding">
+        <div class="container">
+            <h2 class="text-center mb-5">{% trans "NOS PRODUITS" %}</h2>
+            
+            {% if products %}
+            <div class="row">
+                {% for product in products %}
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            {% if product.image %}
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid" loading="lazy">
+                            {% else %}
+                                <img src="{% static 'images/no-image.jpg' %}" alt="{% trans 'Image non disponible' %}" class="img-fluid" loading="lazy">
+                            {% endif %}
+                        </div>
+                        <div class="product-info">
+                            <h2 class="product-title">{{ product.name|upper }}</h2>
+                            <p class="product-description">{{ product.description|upper }}</p>
+                            <div class="product-footer">
+                                <div class="price">
+                                    <span class="amount">{{ product.price }} {% trans "FCFA" %}</span>
+                                </div>
+                                <div class="actions">
+                                    {% if request.user.is_authenticated %}
+                                    <a href="{% url 'add_to_cart_product' product.id %}" 
+                                        class="btn btn-success add-to-cart {% if product.stock_quantity < 1 %}disabled{% endif %}">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                        {% if product.stock_quantity < 1 %}
+                                            {% trans "Rupture de stock" %}
+                                        {% else %}
+                                            {% trans "AJOUTER AU PANIER" %}
+                                        {% endif %}
+                                    </a>
+                                    {% else %}
+                                    <a href="{% url 'login' %}?next={{ request.path }}" 
+                                        class="btn btn-success">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                        {% trans "CONNEXION POUR AJOUTER AU PANIER" %}
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="no-products">
+                <p>{% trans "Aucun produit disponible pour le moment." %}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</main>
+
+{% block extra_css %}
+<style>
+    .section_produit {
+        padding: 60px 0;
+        background-color: #f8f9fa;
+    }
+
+    .product-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .product-image {
+        position: relative;
+        padding-top: 75%;
+        overflow: hidden;
+    }
+
+    .product-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .product-info {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-title {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .product-description {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 15px;
+        flex-grow: 1;
+    }
+
+    .product-footer {
+        margin-top: auto;
+    }
+
+    .price {
+        margin-bottom: 15px;
+    }
+
+    .amount {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #28a745;
+    }
+
+    .actions {
+        display: flex;
+        gap: 10px;
+    }
+
+    .add-to-cart {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .no-products {
+        text-align: center;
+        padding: 50px;
+        background-color: white;
+        border-radius: 10px;
+        margin: 20px auto;
+        max-width: 600px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .section_produit {
+            padding: 30px 0;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+        }
+
+        .product-description {
+            font-size: 0.85rem;
+        }
+
+        .amount {
+            font-size: 1.1rem;
+        }
+
+        .add-to-cart {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .product-card {
+            margin-bottom: 20px;
+        }
+
+        .actions {
+            flex-direction: column;
+        }
+    }
+</style>
+{% endblock %}
+ 
+{% endblock %}

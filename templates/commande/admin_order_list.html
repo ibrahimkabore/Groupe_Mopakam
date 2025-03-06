@@ -1,0 +1,294 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Statistiques -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Total Commandes</h5>
+                    <h2>{{ total_orders }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Chiffre d'affaires</h5>
+                    <h2>{{ total_revenue }} FCFA</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-warning text-white">
+                <div class="card-body">
+                    <h5 class="card-title">En attente</h5>
+                    <h2>{{ pending_orders }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-info text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Terminées</h5>
+                    <h2>{{ completed_orders }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filtres -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="get" class="row g-2 align-items-center">
+                <div class="col">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control form-control-sm" placeholder="Rechercher..." value="{{ search }}">
+                    </div>
+                </div>
+                <div class="col">
+                    <select name="status" class="form-select form-select-sm">
+                        <option value="">Tous les statuts</option>
+                        {% for status_code, status_label in status_choices %}
+                        <option value="{{ status_code }}" {% if status_code == current_status %}selected{% endif %}>
+                            {{ status_label }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="date" name="date_from" class="form-control form-control-sm" value="{{ date_from }}" placeholder="Date début">
+                </div>
+                <div class="col">
+                    <input type="date" name="date_to" class="form-control form-control-sm" value="{{ date_to }}" placeholder="Date fin">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fas fa-filter me-1"></i> Filtrer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Liste des commandes -->
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Référence</th>
+                            <th>Client</th>
+                            <th>Date</th>
+                            <th>Montant</th>
+                            <th>Statut</th>
+                            <th>Paiement</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in page_obj %}
+                        <tr>
+                            <td>{{ order.ref }}</td>
+                            <td>{{ order.user.get_full_name }}</td>
+                            <td>{{ order.created_at|date:"d/m/Y H:i" }}</td>
+                            <td>{{ order.total }} FCFA</td>
+                            <td>
+                                <span class="badge {% if order.status == 'EA' %}bg-warning{% elif order.status == 'TE' %}bg-success{% elif order.status == 'AN' %}bg-danger{% endif %}">
+                                    {{ order.get_status_display }}
+                                </span>
+                            </td>
+                            <td>{{ order.get_payment_method_display }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-primary" onclick="showOrderDetails('{{ order.ref }}')">
+                                        <i class="fas fa-eye me-1"></i> Détails
+                                    </button>
+                                    {% if order.status == 'EA' %}
+                                    <button type="button" class="btn btn-sm btn-outline-success" onclick="validateOrder('{{ order.ref }}')">
+                                        <i class="fas fa-check me-1"></i> Valider
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" onclick="cancelOrder('{{ order.ref }}')">
+                                        <i class="fas fa-times me-1"></i> Annuler
+                                    </button>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="7" class="text-center">Aucune commande trouvée</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            {% if page_obj.has_other_pages %}
+            <nav aria-label="Page navigation" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}&status={{ current_status }}&search={{ search }}&date_from={{ date_from }}&date_to={{ date_to }}">Précédent</a>
+                    </li>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                    <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                        <a class="page-link" href="?page={{ num }}&status={{ current_status }}&search={{ search }}&date_from={{ date_from }}&date_to={{ date_to }}">{{ num }}</a>
+                    </li>
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}&status={{ current_status }}&search={{ search }}&date_from={{ date_from }}&date_to={{ date_to }}">Suivant</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Modal Détails Commande -->
+<div class="modal fade" id="orderDetailsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Détails de la Commande</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <h6>Informations Commande</h6>
+                        <p><strong>Référence:</strong> <span id="orderRef"></span></p>
+                        <p><strong>Date:</strong> <span id="orderDate"></span></p>
+                        <p><strong>Statut:</strong> <span id="orderStatus"></span></p>
+                        <p><strong>Méthode de paiement:</strong> <span id="orderPayment"></span></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Informations Client</h6>
+                        <p><strong>Nom:</strong> <span id="customerName"></span></p>
+                        <p><strong>Email:</strong> <span id="customerEmail"></span></p>
+                        <p><strong>Téléphone:</strong> <span id="customerPhone"></span></p>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Produit</th>
+                                <th>Prix unitaire</th>
+                                <th>Quantité</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderLines">
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                                <td><strong id="orderTotal"></strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript pour la gestion des actions -->
+<script>
+function showOrderDetails(orderRef) {
+    fetch(`/commande/details/${orderRef}/`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('orderRef').textContent = data.ref;
+            document.getElementById('orderDate').textContent = data.created_at;
+            document.getElementById('orderStatus').textContent = data.status_display;
+            document.getElementById('orderPayment').textContent = data.payment_method_display;
+            document.getElementById('customerName').textContent = data.user.full_name;
+            document.getElementById('customerEmail').textContent = data.user.email;
+            document.getElementById('customerPhone').textContent = data.user.phone || 'Non renseigné';
+            
+            const orderLines = document.getElementById('orderLines');
+            orderLines.innerHTML = '';
+            data.lines.forEach(line => {
+                orderLines.innerHTML += `
+                    <tr>
+                        <td>${line.product_name}</td>
+                        <td>${line.unit_price} FCFA</td>
+                        <td>${line.quantity}</td>
+                        <td>${line.line_total} FCFA</td>
+                    </tr>
+                `;
+            });
+            
+            document.getElementById('orderTotal').textContent = `${data.total} FCFA`;
+            
+            new bootstrap.Modal(document.getElementById('orderDetailsModal')).show();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Une erreur est survenue lors du chargement des détails');
+        });
+}
+
+function validateOrder(orderRef) {
+    if (confirm('Êtes-vous sûr de vouloir valider cette commande ?')) {
+        fetch(`/commande/validate/${orderRef}/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert(data.error || 'Une erreur est survenue');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Une erreur est survenue');
+        });
+    }
+}
+
+function cancelOrder(orderRef) {
+    if (confirm('Êtes-vous sûr de vouloir annuler cette commande ?')) {
+        fetch(`/commande/cancel/${orderRef}/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert(data.error || 'Une erreur est survenue');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Une erreur est survenue');
+        });
+    }
+}
+</script>
+{% endblock %} 

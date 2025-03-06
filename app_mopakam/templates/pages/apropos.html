@@ -1,0 +1,83 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+{% load static i18n %}
+ 
+
+  <section class="about_section layout_padding " id="about_section1">
+
+    <div class="container ">
+      <h2>{% trans "GROUPE MOPAKAM" %}</h2>
+      <div class="row">
+
+        <div class="col-md-12 contenu">
+          <div class="para">
+            <p>
+              {% trans "La Groupe Mopakam est une entreprise spécialisée dans la production et la vente de produits fermiers, de qualité supérieure,incluant des viandes de porc et de lapin ainsi que des oeufs frais. nous nous engageons à offrir des produits fermiers frais et authentiques,issus de pratiques respectueuses de l'environnement." %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about_section layout_padding bg_color">
+
+    <div class="container  ">
+
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{% static 'images/background.jpeg' %}" alt="">
+        </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                {% trans "NOTRE MISSION" %}
+              </h2>
+            </div>
+            <p>
+              {% trans "choisir groupe mopakam , c'est choisir la qualité et la transparence.nous nous distinguons par notre engagement envers la fraicheur et la provenance locale de nos produits nos viandes et oeufs sont issus de pratiques respectueuses de l'environnement et des animaux. garatissant des produits savoureux et sains pour votre famille.avec un controle strict de qualité à chaque étape, nous offrons une expérience de consommation en toute confiance." %}
+            </p>
+            <a href="{% url 'produit' %}">
+              {% trans "DÉCOUVREZ NOS PRODUITS FERMIERS" %}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end food section -->
+  <section class="about_section layout_padding" id="we">
+
+    <div class="container  ">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                {% trans "POURQUOI NOUS ?" %}
+              </h2>
+            </div>
+            <p>
+              {% trans "choisir groupe mopakam , c'est choisir la qualité et la transparence.nous nous distinguons par notre engagement envers la fraicheur et la provenance locale de nos produits nos viandes et oeufs sont issus de pratiques respectueuses de l'environnement et des animaux. garatissant des produits savoureux et sains pour votre famille.avec un controle strict de qualité à chaque étape, nous offrons une expérience de consommation en toute confiance." %}
+            </p>
+            <a href="{% url 'produit' %}">
+
+              {% trans "DÉCOUVREZ NOTRE DIFFÉRENCE" %}
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{% static 'images/background.jpeg' %}" alt="">
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
+  {% endblock %}

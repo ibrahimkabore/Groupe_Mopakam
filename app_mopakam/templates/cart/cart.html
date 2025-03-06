@@ -1,0 +1,156 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">{% trans "Mon Panier" %}</h2>
+    
+    {% if cart_items %}
+        <div class="cart-items">
+            {% for item in cart_items %}
+                <div class="cart-item" data-item-id="{{ item.id }}">
+                    <div class="row align-items-center mb-3 p-3 bg-white rounded shadow-sm">
+                        <div class="col-md-2">
+                            {% if item.product.image %}
+                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded">
+                            {% else %}
+                                <div class="no-image">{% trans "Pas d'image" %}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-4">
+                            <h5>{{ item.product.name }}</h5>
+                            <p class="text-muted">{{ item.product.description|truncatewords:20 }}</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="price">{{ item.product.price }} {% trans "FCFA" %}</div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="quantity-controls">
+                                <!-- Bouton de diminution -->
+                                <button class="btn btn-sm btn-outline-secondary btn-decrease" 
+                                        data-url="{% url 'update_cart_item' item.id item.quantity|add:'-1' %}"
+                                        onclick="window.location.href=this.getAttribute('data-url');">
+                                    -
+                                </button>
+                                
+                                <!-- Affichage de la quantité -->
+                                <span class="quantity mx-2">{{ item.quantity }}</span>
+                                
+                                <!-- Bouton d'augmentation -->
+                                <button class="btn btn-sm btn-outline-secondary btn-increase" 
+                                        data-url="{% url 'update_cart_item' item.id item.quantity|add:'1' %}"
+                                        onclick="window.location.href=this.getAttribute('data-url');">
+                                    +
+                                </button>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-1">
+                            <div class="total-price">{{ item.total_price }} {% trans "FCFA" %}</div>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-danger btn-sm btn-remove" data-url="{% url 'remove_cart_item' item.id %}" 
+                                    onclick="if (confirm('{% trans "Êtes-vous sûr de vouloir retirer cet article ?" %}')) { window.location.href = this.getAttribute('data-url'); }">
+                                <i class="fas fa-trash"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+            <div class="cart-summary mt-4 p-3 bg-white rounded shadow-sm">
+                <div class="row">
+                    <!-- Bouton Continuer les achats -->
+                    <div class="col-12 col-md-4 mb-2">
+                        <a href="{% url 'produit' %}" class="btn btn-outline-primary w-100">
+                            <i class="fas fa-arrow-left"></i> {% trans "Continuer les achats" %}
+                        </a>
+                    </div>
+                    
+                    <!-- Bouton Historique des commandes -->
+                    <div class="col-12 col-md-4 mb-2">
+                        <a href="{% url 'order_list' %}" class="btn btn-outline-info w-100">
+                            <i class="fas fa-history"></i> {% trans "Historique des commandes" %}
+                        </a>
+                    </div>
+                
+                    <!-- Bouton Vider le panier (si panier n'est pas vide) -->
+                    <div class="col-12 col-md-4 mb-2">
+                        {% if cart_items %}
+                        <a href="{% url 'clear_cart' %}" class="btn btn-outline-danger w-100" onclick="return confirm('{% trans "Êtes-vous sûr de vouloir vider votre panier ?" %}');">
+                            <i class="fas fa-trash"></i> {% trans "Vider le panier" %}
+                        </a>
+                        {% endif %}
+                    </div>
+                
+                    <!-- Section avec total et bouton Passer la commande -->
+                    <div class="col-12 col-md-12 text-center text-md-right">
+                        <h4>{% trans "Total:" %} <span id="cart-total">{{ total }} {% trans "FCFA" %}</span></h4>
+                        <button class="btn btn-success btn-lg mt-2 proceed-to-checkout"
+                            onclick="window.location.href='{% url 'checkout' %}';">
+                            {% trans "Passer la commande" %} <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="empty-cart text-center py-5">
+            <i class="fas fa-shopping-cart fa-3x mb-3 text-muted"></i>
+            <h3>{% trans "Votre panier est vide" %}</h3>
+            <p class="text-muted">{% trans "Découvrez nos produits et ajoutez-les à votre panier" %}</p>
+            <a href="{% url 'produit' %}" class="btn btn-primary mt-3">
+                {% trans "Voir les produits" %}
+            </a>
+            <a href="{% url 'order_list' %}" class="btn btn-primary mt-3">
+                <i class="fas fa-history"></i> {% trans "Historique des commandes" %}
+            </a>
+        </div>
+    {% endif %}
+</div>
+
+{% block extra_css %}
+<style>
+    .cart-item {
+        transition: all 0.3s ease;
+    }
+    .cart-item:hover {
+        transform: translateY(-2px);
+    }
+    .quantity-controls {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .quantity {
+        min-width: 30px;
+        text-align: center;
+    }
+    .no-image {
+        height: 100px;
+        background-color: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+    .remove-item {
+        transition: all 0.2s ease;
+    }
+    .remove-item:hover {
+        transform: scale(1.1);
+    }
+    .proceed-to-checkout {
+        transition: all 0.3s ease;
+    }
+    .proceed-to-checkout:hover {
+        transform: translateX(5px);
+    }
+</style>
+{% endblock %}
+
+
+
+{% endblock %}

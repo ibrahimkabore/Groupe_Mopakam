@@ -1,0 +1,228 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Historique des commandes" %}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">{% trans "Historique de vos commandes" %}</h1>
+
+    {% if orders %}
+    <div class="row">
+        <!-- Affichage du tableau pour les grands écrans -->
+        <div class="col-12 d-none d-sm-block">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>{% trans "Référence" %}</th>
+                                    <th>{% trans "Date" %}</th>
+                                    <th>{% trans "Statut" %}</th>
+                                    <th>{% trans "Méthode de paiement" %}</th>
+                                    <th>{% trans "Total" %}</th>
+                                    <th>{% trans "Actions" %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                <tr>
+                                    <td>
+                                        <span class="fw-bold">{{ order.ref }}</span>
+                                    </td>
+                                    <td>{{ order.created_at|date:"d/m/Y H:i" }}</td>
+                                    <td>
+                                        {% if order.status == 'EA' %}
+                                            <span class="badge bg-warning">{% trans "En attente" %}</span>
+                                        {% elif order.status == 'PC' %}
+                                            <span class="badge bg-info">{% trans "Paiement confirmé" %}</span>
+                                        {% elif order.status == 'EP' %}
+                                            <span class="badge bg-primary">{% trans "En préparation" %}</span>
+                                        {% elif order.status == 'EX' %}
+                                            <span class="badge bg-info">{% trans "Expédiée" %}</span>
+                                        {% elif order.status == 'LV' %}
+                                            <span class="badge bg-success">{% trans "Livrée" %}</span>
+                                        {% elif order.status == 'AN' %}
+                                            <span class="badge bg-danger">{% trans "Annulée" %}</span>
+                                        {% elif order.status == 'RB' %}
+                                            <span class="badge bg-secondary">{% trans "Remboursée" %}</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if order.payment_method == 'CB' %}
+                                            <i class="fas fa-money-bill-wave text-success"></i> {% trans "Carte Bancaire" %}
+                                        {% elif order.payment_method == 'MM' %}
+                                            <i class="fas fa-mobile-alt text-primary"></i> {% trans "Mobile Money" %}
+                                        {% elif order.payment_method == 'WA' %}
+                                            <i class="fas fa-credit-card text-info"></i> {% trans "Wave" %}
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ order.total|floatformat:0 }} {% trans "FCFA" %}</td>
+                                    <td>
+                                        <div class="btn-group gap-2">
+                                            <button type="button" class="btn btn-sm btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#details-{{ order.ref }}" aria-expanded="false">
+                                                <i class="fas fa-eye me-1"></i> <span class="btn-text">{% trans "Détails" %}</span>
+                                            </button>
+                                            
+                                            {% if order.status == 'EA' %}
+                                            <button class="btn btn-sm btn-outline-success me-2" onclick="validateOrder('{{ order.ref }}')">
+                                                <i class="fas fa-check me-1"></i> {% trans "Valider" %}
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" onclick="cancelOrder('{{ order.ref }}')">
+                                                <i class="fas fa-times me-1"></i> {% trans "Annuler" %}
+                                            </button>
+                                            {% endif %}
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Affichage des cartes pour les petits écrans -->
+        <div class="col-12 d-sm-none">
+            <div class="row">
+                {% for order in orders %}
+                <div class="col-12 mb-3">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{% trans "Référence" %}: {{ order.ref }}</h5>
+                            <p class="card-text">
+                                <strong>{% trans "Date" %}:</strong> {{ order.created_at|date:"d/m/Y H:i" }}<br>
+                                <strong>{% trans "Statut" %}:</strong>
+                                {% if order.status == 'EA' %}
+                                    <span class="badge bg-warning">{% trans "En attente" %}</span>
+                                {% elif order.status == 'PC' %}
+                                    <span class="badge bg-info">{% trans "Paiement confirmé" %}</span>
+                                {% elif order.status == 'EP' %}
+                                    <span class="badge bg-primary">{% trans "En préparation" %}</span>
+                                {% elif order.status == 'EX' %}
+                                    <span class="badge bg-info">{% trans "Expédiée" %}</span>
+                                {% elif order.status == 'LV' %}
+                                    <span class="badge bg-success">{% trans "Livrée" %}</span>
+                                {% elif order.status == 'AN' %}
+                                    <span class="badge bg-danger">{% trans "Annulée" %}</span>
+                                {% elif order.status == 'RB' %}
+                                    <span class="badge bg-secondary">{% trans "Remboursée" %}</span>
+                                {% endif %}<br>
+                                <strong>{% trans "Méthode de paiement" %}:</strong>
+                                {% if order.payment_method == 'CB' %}
+                                    <i class="fas fa-money-bill-wave text-success"></i> {% trans "Carte Bancaire" %}
+                                {% elif order.payment_method == 'MM' %}
+                                    <i class="fas fa-mobile-alt text-primary"></i> {% trans "Mobile Money" %}
+                                {% elif order.payment_method == 'WA' %}
+                                    <i class="fas fa-credit-card text-info"></i> {% trans "Wave" %}
+                                {% endif %}<br>
+                                <strong>{% trans "Total" %}:</strong> {{ order.total|floatformat:0 }} {% trans "FCFA" %}
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#details-{{ order.ref }}">
+                                    <i class="fas fa-eye"></i> {% trans "Détails" %}
+                                </button>
+                                {% if order.status == 'EA' %}
+                                <button class="btn btn-outline-success btn-sm" onclick="validateOrder('{{ order.ref }}')">
+                                    <i class="fas fa-check"></i> {% trans "Valider" %}
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" onclick="cancelOrder('{{ order.ref }}')">
+                                    <i class="fas fa-times"></i> {% trans "Annuler" %}
+                                </button>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% for order in orders %}
+    <div class="modal fade" id="details-{{ order.ref }}" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{% trans "Détails de la commande" %}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>{% trans "Produit" %}</th>
+                                    <th>{% trans "Quantité" %}</th>
+                                    <th>{% trans "Prix unitaire" %}</th>
+                                    <th>{% trans "Total" %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for line in order.lines.all %}
+                                <tr>
+                                    <td>{{ line.product.name }}</td>
+                                    <td>{{ line.quantity }}</td>
+                                    <td>{{ line.unit_price|floatformat:0 }} {% trans "FCFA" %}</td>
+                                    <td>{{ line.line_total|floatformat:0 }} {% trans "FCFA" %}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="text-end fw-bold">{% trans "Total:" %}</td>
+                                    <td class="fw-bold">{{ order.total|floatformat:0 }} {% trans "FCFA" %}</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "Fermer" %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="text-center py-5">
+        <i class="fas fa-shopping-bag fa-3x text-muted mb-3"></i>
+        <h3>{% trans "Vous n'avez pas encore de commandes" %}</h3>
+        <p class="text-muted">{% trans "Commencez vos achats dès maintenant !" %}</p>
+        <a href="{% url 'product_list' %}" class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i> {% trans "Voir les produits" %}
+        </a>
+    </div>
+    {% endif %}
+</div>
+
+{% block extra_js %}
+<script>
+function cancelOrder(orderRef) {
+    if (confirm('{% trans "Êtes-vous sûr de vouloir annuler cette commande ?" %}')) {
+        fetch(/order/${orderRef}/cancel/, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert('{% trans "Erreur lors de l\'annulation de la commande" %}');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('{% trans "Une erreur est survenue" %}');
+        });
+    }
+}
+</script>
+{% endblock %}
+{% endblock %}

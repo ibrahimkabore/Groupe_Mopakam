@@ -1,0 +1,216 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+{% load static%}
+{% load i18n %}
+ 
+  <!-- food section -->
+  <section class="about_section layout_padding bg_blue">
+
+    <div class="container ">
+      <h2>{% trans "PRÉSENTATION DE <br>L'ENTREPRISE" %}</h2>
+      <div class="row">
+
+        <div class="col-md-12 contenu">
+          <div class="para">
+            <p>
+              {% trans "Le groupe mopakam s'engage à fournir des produits agricoles de première qualité directement de nos fermes à votre table. spécialistes dans la viande fraîche de porc, de lapin et d'œufs, nous nous engageons à adopter des pratiques agricoles éthiques et durables qui favorisent le bien-être animal et offrent un goût et une qualité exceptionnels." %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about_section layout_padding " id="mission">
+
+    <div class="container  ">
+
+      <div class="row container_row">
+
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                {% trans "MISSION ET VALEURS" %}
+              </h2>
+            </div>
+            <p>
+              {% trans "au groupe mopakam, nous croyons en une agriculture respectueuse des animaux et de l'environnement tout en garatissant des produits de la plus haute qualité qualité à nos clients. notre mission est de produire des produits agricoles frais et sains qui favorisent un mode de vie sain et protègent notre planète." %}
+            </p>
+            <a href="{% url 'apropos'%}">
+              {% trans "EN SAVOIR PLUS" %}  
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{% static 'images/ALL_TEAM_MEMBERS/MOPAKAM (26).jpg' %}" alt="{% trans "groupe mopakam, nous croyons en une agriculture" %}">          
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="expertise_experience">
+      <div class="opacite">
+      <h2>{% trans "EXPERTISE & EXPERIENCE" %}</h2>
+      <P>
+        {% trans "Fort de ses années d'expérience dans le domaine agricole, le groupe mopakam apporte une expertise reconnue à l'expérience de la ferme à la table. Notre équipe combine des pratiques agricoles traditionnelles avec des techniques modernes pour offrir une qualité et un goût constants. Nous sommes fiers d'être des leaders dans l'agriculture éthiques et durable." %}
+      </P>
+      </div>
+  </div>
+  
+  </section>
+  <section class="food_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2> {% trans "NOS PRODUITS" %}</h2>
+      </div>
+  
+      <!-- Version desktop (grid) -->
+      <div class="d-none d-md-block">
+        <div class="row">
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'images/imgs/viande_boeuf.jpeg' %}" alt="{% trans "Porc" %}" class="img-fluid">
+              </div>
+              <div class="detail-box">
+                <h5>{% trans "Porc" %}</h5>
+                <p>{% trans "Savourez la riche saveur de notre porc de première qualité, sélectionné de manière experte pour une fraicheur imbattable." %}</p>
+                <a href="{% url 'produit' %}" class="btn btn-primary">{% trans "ACHETEZ MAINTENANT" %}</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'images/imgs/viande_lapin.jpeg' %}" alt="{% trans "Viande De Lapin" %}" class="img-fluid">
+              </div>
+              <div class="detail-box">
+                <h5>{% trans "Viande De Lapin" %}</h5>
+                <p>{% trans "Savourez le gout délicat de notre viande de lapin, riche en protéines et pauvre en matières grasses." %}</p>
+                <a href="{% url 'produit' %}" class="btn btn-primary">{% trans "ACHETEZ MAINTENANT" %}</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'images/imgs/oeuf.jpg' %}" alt="{% trans "OEUF" %}" class="img-fluid">
+              </div>
+              <div class="detail-box">
+                <h5>{% trans "OEUF" %}</h5>
+                <p>{% trans "Savourez la fraicheur de nos oeufs fermiers, parfaits pour chaque repas." %}</p>
+                <a href="{% url 'produit' %}" class="btn btn-primary">{% trans "ACHETEZ MAINTENANT" %}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Version mobile (carousel) -->
+      <div id="productCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'images/imgs/viande_boeuf.jpeg' %}" alt="{% trans "Porc" %}" class="img-fluid">
+              </div>
+              <div class="detail-box">
+                <h5>{% trans "Porc" %}</h5>
+                <p>{% trans "Savourez la riche saveur de notre porc de première qualité, sélectionné de manière experte pour une fraicheur imbattable." %}</p>
+                <a href="{% url 'produit' %}" class="btn btn-primary">{% trans "ACHETEZ MAINTENANT" %}</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'images/imgs/viande_lapin.jpeg' %}" alt="{% trans "Viande De Lapin" %}" class="img-fluid">
+              </div>
+              <div class="detail-box">
+                <h5>{% trans "Viande De Lapin" %}</h5>
+                <p>{% trans "Savourez le gout délicat de notre viande de lapin, riche en protéines et pauvre en matières grasses." %}</p>
+                <a href="{% url 'produit' %}" class="btn btn-primary">{% trans "ACHETEZ MAINTENANT" %}</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{% static 'images/imgs/oeuf.jpg' %}" alt="{% trans "OEUF" %}" class="img-fluid">
+              </div>
+              <div class="detail-box">
+                <h5>{% trans "OEUF" %}</h5>
+                <p>{% trans "Savourez la fraicheur de nos oeufs fermiers, parfaits pour chaque repas." %}</p>
+                <a href="{% url 'produit' %}" class="btn btn-primary">{% trans "ACHETEZ MAINTENANT" %}</a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">{% trans "Précédent" %}</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">{% trans "Suivant" %}</span>
+        </button>
+      </div>
+    </div>
+</section>
+
+   <!-- client section -->
+
+   {% comment %} <section class="client_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container heading_center psudo_white_primary mb_45">
+        <h2>
+          {% trans "VOYONS CE QUE DISENT NOS CLIENTS" %}
+        </h2>
+        <p>{% trans "Découvrez ce que nos clients satisfaits disent de nous" %}</p>
+      </div>
+      <div class="carousel-wrap row ">
+        <div class="owl-carousel client_owl-carousel">
+          <div class="item">
+            <div class="box">
+              <div class="detail-box">
+                <p>
+                  {% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" %}
+                </p>
+                <h6>
+                  {% trans "Moana Michell" %}
+                </h6>
+                <p>
+                  {% trans "magna aliqua" %}
+                </p>
+              </div>
+              <div class="img-box">
+                <img src="images/client1.jpg" alt="" class="box-img">
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="detail-box">
+                <p>
+                  {% trans "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" %}
+                </p>
+                <h6>
+                  {% trans "Mike Hamell" %}
+                </h6>
+                <p>
+                  {% trans "magna aliqua" %}
+                </p>
+              </div>
+              <div class="img-box">
+                <img src="images/client2.jpg" alt="" class="box-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> {% endcomment %}
+
+  {% endblock %}

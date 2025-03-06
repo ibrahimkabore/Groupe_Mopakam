@@ -1,0 +1,98 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+{% load i18n %}
+
+<main>
+     
+
+
+       <!-- Authentification -->
+       <section class="auth">
+        <div class="container1" id="container1">
+  
+          <!-- Formulaire d'enregistrement -->
+          <div class="form-container sign-up">
+            <form>
+              <h1>{% trans "Créer un compte" %}</h1>
+  
+              <!-- Icons réseaux sociaux -->
+              <div class="social-icons">
+                
+  
+                <a href="#" class="icon1">
+                  <i class="fa fa-facebook-f"></i>
+                </a>
+  
+                <a href="#" class="icon1">  <i class="fa fa-google-plus"></i></a>
+  
+                <a href="#" class="icon1"> <i class="fa fa-linkedin"></i></a>
+              </div>
+              <!-- Fin Icons réseaux social -->
+  
+              <span>{% trans "Ou utiliser votre email pour vous enregistrer" %}</span>
+              <!-- Input -->
+              <input type="text" placeholder="{% trans 'Nom et Prénom' %}" required>
+              <input type="email" placeholder="{% trans 'Email' %}" required>
+              <input type="number" placeholder="{% trans 'Téléphone' %}" required>
+              <input type="password" placeholder="{% trans 'Mot de passe' %}" required>
+  
+              <button>{% trans "Inscription" %}</button>
+              <!-- Fin Input -->
+  
+            </form>
+          </div>
+          <!-- Fin Formulaire d'enregistrement -->
+  
+          <!-- Formulaire de connexion -->
+          <div class="form-container sign-in">
+            <form>
+              <h1>{% trans "Connectez-vous" %}</h1>
+  
+              <!-- Icons réseaux sociaux -->
+              <div class="social-icons1">
+                <a href="#" class="icon1"> <i class="fa fa-google-plus"></i></a>
+  
+                <a href="#" class="icon1"> <i class="fa fa-facebook-f"></i></a>
+  
+                <a href="#" class="icon1"> <i class="fa fa-linkedin"></i></a>
+              </div>
+              <!-- Fin Icons réseaux social -->
+              <span>{% trans "Ou utiliser votre email mot de passe" %}</span>
+              <!-- Input -->
+              <input type="email" placeholder="{% trans 'Email' %}" required>
+              <input type="password" placeholder="{% trans 'Mot de passe' %}" required>
+              <a href="pwd.html">{% trans "Mot de passe, oubliez ?" %}</a>
+              <button>{% trans "Connexion" %}</button>
+              <!-- Fin Input -->
+  
+            </form>
+          </div>
+          <!-- Fin Formulaire de connexion -->
+  
+          <div class="toggle-container">
+            <div class="toggle">
+  
+              <!-- Toggle connect -->
+              <div class="toggle-panel toggle-left">
+                <h1>{% trans "Salut !" %}</h1>
+                <p>{% trans "Connecte-toi et accède au site" %}</p>
+                <button class="hidden" id="login">{% trans "Connexion" %}</button>
+              </div>
+              <!-- Fin Toggle connect -->
+  
+              <!-- Toggle register -->
+              <div class="toggle-panel toggle-right">
+                <h1>{% trans "Bienvenue !" %}</h1>
+                <p>{% trans "Enregistre-toi et accède au site" %}</p>
+                <button class="hidden" id="register">{% trans "Enregistrement" %}</button>
+              </div>
+              <!-- Fin Toggle register -->
+  
+            </div>
+          </div>
+  
+  
+  
+        </div>
+      </section>
+  {% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title mb-0">{% trans "Nouveau Produit" %}</h3>
+                </div>
+                <div class="card-body">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="name" class="form-label">{% trans "Nom du produit" %}</label>
+                            <input type="text" class="form-control" id="name" name="name" required pattern="^[a-zA-Z0-9\s]{3,50}$">
+                            <div class="invalid-feedback">
+                                {% trans "Veuillez entrer un nom pour le produit. Le nom doit contenir entre 3 et 50 caractères et ne doit pas contenir de caractères spéciaux." %}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="category" class="form-label">{% trans "Catégorie" %}</label>
+                            <select class="form-select" id="category" name="category" required>
+                                <option value="">{% trans "Sélectionnez une catégorie" %}</option>
+                                {% for category in categories %}
+                                    <option value="{{ category.name }}">{{ category.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="invalid-feedback">
+                                {% trans "Veuillez sélectionner une catégorie." %}
+                            </div>
+                            <div class="form-text">
+                                {% trans "Si la catégorie n'existe pas, elle sera créée automatiquement. Pour ajouter une nouvelle catégorie, tapez simplement son nom." %}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description" class="form-label">{% trans "Description" %}</label>
+                            <textarea class="form-control" id="description" name="description" rows="3" required pattern="^[a-zA-Z0-9\s]{3,200}$"></textarea>
+                            <div class="invalid-feedback">
+                                {% trans "Veuillez entrer une description pour le produit. La description doit contenir entre 3 et 200 caractères et ne doit pas contenir de caractères spéciaux." %}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="price" class="form-label">{% trans "Prix (FCFA)" %}</label>
+                                    <input type="number" class="form-control" id="price" name="price" min="0" step="100" required pattern="^[0-9]{1,10}$">
+                                    <div class="invalid-feedback">
+                                        {% trans "Veuillez entrer un prix valide. Le prix doit être un entier compris entre 0 et 9999999999." %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="stock_quantity" class="form-label">{% trans "Quantité en stock" %}</label>
+                                    <input type="number" class="form-control" id="stock_quantity" name="stock_quantity" min="0" required pattern="^[0-9]{1,10}$">
+                                    <div class="invalid-feedback">
+                                        {% trans "Veuillez entrer une quantité valide. La quantité doit être un entier compris entre 0 et 9999999999." %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="image" class="form-label">{% trans "Image du produit" %}</label>
+                            <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                            <div class="form-text">{% trans "Format recommandé : JPG, PNG. Taille maximale : 5MB" %}</div>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="{% url 'product_list' %}" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> {% trans "Retour" %}
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-save"></i> {% trans "Enregistrer" %}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Validation du formulaire
+    const forms = document.querySelectorAll('.needs-validation');
+    
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+    });
+
+    // Prévisualisation de l'image
+    const imageInput = document.getElementById('image');
+    imageInput.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            if (file.size > 5 * 1024 * 1024) {
+                alert('{% trans "L\'image ne doit pas dépasser 5MB" %}');
+                this.value = '';
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const preview = document.createElement('img');
+                preview.src = e.target.result;
+                preview.style.maxWidth = '200px';
+                preview.style.marginTop = '10px';
+                preview.className = 'img-thumbnail';
+                
+                const existingPreview = imageInput.nextElementSibling.nextElementSibling;
+                if (existingPreview && existingPreview.tagName === 'IMG') {
+                    existingPreview.remove();
+                }
+                
+                imageInput.parentNode.appendChild(preview);
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+});
+</script>
+{% endblock %}
+{% endblock %}

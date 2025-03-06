@@ -1,0 +1,2649 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-23 23:02+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\app_mopakam\admin.py:31
+msgid "Personal info"
+msgstr ""
+
+#: .\app_mopakam\admin.py:32
+msgid "Location"
+msgstr ""
+
+#: .\app_mopakam\admin.py:33
+msgid "User type"
+msgstr ""
+
+#: .\app_mopakam\admin.py:34
+msgid "Status"
+msgstr ""
+
+#: .\app_mopakam\admin.py:35
+msgid "Important dates"
+msgstr ""
+
+#: .\app_mopakam\admin.py:56
+msgid "Pricing and Stock"
+msgstr ""
+
+#: .\app_mopakam\admin.py:59
+msgid "Status and Features"
+msgstr ""
+
+#: .\app_mopakam\admin.py:62
+#: .\app_mopakam\templates\product_management\list.html:64
+#: .\env\Lib\site-packages\django\db\models\fields\files.py:420
+msgid "Image"
+msgstr ""
+
+#: .\app_mopakam\admin.py:65
+msgid "Timestamps"
+msgstr ""
+
+#: .\app_mopakam\admin.py:105
+msgid "Mark selected orders as processing"
+msgstr ""
+
+#: .\app_mopakam\admin.py:110
+msgid "Mark selected orders as shipped"
+msgstr ""
+
+#: .\app_mopakam\admin.py:115
+msgid "Mark selected orders as delivered"
+msgstr ""
+
+#: .\app_mopakam\models.py:27 .\app_mopakam\models.py:430
+msgid "Unique Identifier"
+msgstr ""
+
+#: .\app_mopakam\models.py:33 .\app_mopakam\models.py:146
+#: .\app_mopakam\models.py:447
+msgid "Creation Timestamp"
+msgstr ""
+
+#: .\app_mopakam\models.py:37 .\app_mopakam\models.py:150
+#: .\app_mopakam\models.py:451
+msgid "Last Update Timestamp"
+msgstr ""
+
+#: .\app_mopakam\models.py:55
+msgid "Country Name"
+msgstr ""
+
+#: .\app_mopakam\models.py:60
+msgid "Country Code"
+msgstr ""
+
+#: .\app_mopakam\models.py:83
+msgid "City Name"
+msgstr ""
+
+#: .\app_mopakam\models.py:90
+msgid "Associated Country"
+msgstr ""
+
+#: .\app_mopakam\models.py:95
+msgid "City"
+msgstr ""
+
+#: .\app_mopakam\models.py:96
+msgid "Cities"
+msgstr ""
+
+#: .\app_mopakam\models.py:115 .\app_mopakam\views\auth.py:47
+msgid "Homme"
+msgstr "Man"
+
+#: .\app_mopakam\models.py:116 .\app_mopakam\views\auth.py:48
+msgid "Femme"
+msgstr "Woman"
+
+#: .\app_mopakam\models.py:117 .\app_mopakam\views\auth.py:49
+msgid "Autre"
+msgstr "Other"
+
+#: .\app_mopakam\models.py:121
+msgid "Client"
+msgstr "Client"
+
+#: .\app_mopakam\models.py:122
+msgid "Gestionnaire"
+msgstr "Manager"
+
+#: .\app_mopakam\models.py:123
+msgid "Administrateur"
+msgstr "Administrator"
+
+#: .\app_mopakam\models.py:127
+msgid "Phone Number"
+msgstr ""
+
+#: .\app_mopakam\models.py:132
+msgid "Gender"
+msgstr ""
+
+#: .\app_mopakam\models.py:139
+msgid "type user"
+msgstr ""
+
+#: .\app_mopakam\models.py:160
+msgid "User Country"
+msgstr ""
+
+#: .\app_mopakam\models.py:168
+msgid "User City"
+msgstr ""
+
+#: .\app_mopakam\models.py:276
+msgid "Category Name"
+msgstr ""
+
+#: .\app_mopakam\models.py:287
+msgid "Category"
+msgstr ""
+
+#: .\app_mopakam\models.py:288
+msgid "Categories"
+msgstr ""
+
+#: .\app_mopakam\models.py:322
+msgid "Disponible"
+msgstr "Available"
+
+#: .\app_mopakam\models.py:323
+msgid "en rupture de stock"
+msgstr "out of stock"
+
+#: .\app_mopakam\models.py:324
+msgid "Discontinued"
+msgstr ""
+
+#: .\app_mopakam\models.py:328
+msgid "Product Name"
+msgstr ""
+
+#: .\app_mopakam\models.py:333
+msgid "Product Description"
+msgstr ""
+
+#: .\app_mopakam\models.py:339
+msgid " Category"
+msgstr ""
+
+#: .\app_mopakam\models.py:343
+msgid "Product Price"
+msgstr ""
+
+#: .\app_mopakam\models.py:349
+msgid "Discount Percentage"
+msgstr ""
+
+#: .\app_mopakam\models.py:358
+msgid "Stock Quantity"
+msgstr ""
+
+#: .\app_mopakam\models.py:362
+msgid "Product Status"
+msgstr ""
+
+#: .\app_mopakam\models.py:369
+msgid "Product Image"
+msgstr ""
+
+#: .\app_mopakam\models.py:457
+msgid "Favorite"
+msgstr ""
+
+#: .\app_mopakam\models.py:458
+msgid "Favorites"
+msgstr ""
+
+#: .\app_mopakam\models.py:474
+msgid "Cart Owner"
+msgstr ""
+
+#: .\app_mopakam\models.py:477
+msgid "Cart Active Status"
+msgstr ""
+
+#: .\app_mopakam\models.py:500
+msgid "Shopping Cart"
+msgstr ""
+
+#: .\app_mopakam\models.py:505
+msgid "Product"
+msgstr ""
+
+#: .\app_mopakam\models.py:508
+msgid "Product Quantity"
+msgstr ""
+
+#: .\app_mopakam\models.py:638
+msgid "1 - Very Unsatisfied"
+msgstr ""
+
+#: .\app_mopakam\models.py:639
+msgid "2 - Unsatisfied"
+msgstr ""
+
+#: .\app_mopakam\models.py:640
+msgid "3 - Average"
+msgstr ""
+
+#: .\app_mopakam\models.py:641
+msgid "4 - Satisfied"
+msgstr ""
+
+#: .\app_mopakam\models.py:642
+msgid "5 - Excellent"
+msgstr ""
+
+#: .\app_mopakam\models.py:649
+msgid "Associated Product"
+msgstr ""
+
+#: .\app_mopakam\models.py:654
+msgid "User"
+msgstr ""
+
+#: .\app_mopakam\models.py:657
+msgid "Rating"
+msgstr ""
+
+#: .\app_mopakam\models.py:661
+msgid "Comment"
+msgstr ""
+
+#: .\app_mopakam\models.py:666
+msgid "Review Date"
+msgstr ""
+
+#: .\app_mopakam\models.py:670
+msgid "Not Recommended"
+msgstr ""
+
+#: .\app_mopakam\models.py:671
+msgid "Neutral"
+msgstr ""
+
+#: .\app_mopakam\models.py:672
+msgid "Recommended"
+msgstr ""
+
+#: .\app_mopakam\models.py:676
+msgid "Recommendation Status"
+msgstr ""
+
+#: .\app_mopakam\templates\cart\cart.html:7
+msgid "Mon Panier"
+msgstr "My Cart"
+
+#: .\app_mopakam\templates\cart\cart.html:18
+msgid "Pas d'image"
+msgstr "No Image"
+
+#: .\app_mopakam\templates\cart\cart.html:26
+#: .\app_mopakam\templates\cart\cart.html:50
+#: .\app_mopakam\templates\cart\cart.html:90
+#: .\app_mopakam\templates\commande\historique_commandes.html:63
+#: .\app_mopakam\templates\commande\historique_commandes.html:97
+#: .\app_mopakam\templates\commande\historique_commandes.html:98
+#: .\app_mopakam\templates\commande\historique_commandes.html:105
+#: .\app_mopakam\templates\pages\produit.html:24
+#: .\app_mopakam\templates\product_management\list.html:86
+msgid "FCFA"
+msgstr "FCFA"
+
+#: .\app_mopakam\templates\cart\cart.html:54
+msgid "Êtes-vous sûr de vouloir retirer cet article ?"
+msgstr "Are you sure you want to remove this item?"
+
+#: .\app_mopakam\templates\cart\cart.html:68
+#: .\app_mopakam\templates\commande\confirmation_commande.html:67
+#: .\app_mopakam\templates\commande\valider_commande.html:95
+msgid "Continuer les achats"
+msgstr "Continue shopping"
+
+#: .\app_mopakam\templates\cart\cart.html:75
+#: .\app_mopakam\templates\cart\cart.html:108
+#: .\app_mopakam\templates\commande\historique_commandes.html:5
+msgid "Historique des commandes"
+msgstr "Historical orders"
+
+#: .\app_mopakam\templates\cart\cart.html:82
+msgid "Êtes-vous sûr de vouloir vider votre panier ?"
+msgstr "Are you sure you want to empty your cart?"
+
+#: .\app_mopakam\templates\cart\cart.html:83
+msgid "Vider le panier"
+msgstr "Empty cart"
+
+#: .\app_mopakam\templates\cart\cart.html:90
+#: .\app_mopakam\templates\commande\commande.html:32
+#: .\app_mopakam\templates\commande\confirmation_commande.html:24
+#: .\app_mopakam\templates\commande\historique_commandes.html:104
+msgid "Total:"
+msgstr "Total:"
+
+#: .\app_mopakam\templates\cart\cart.html:93
+msgid "Passer la commande"
+msgstr "Place the order"
+
+#: .\app_mopakam\templates\cart\cart.html:102
+msgid "Votre panier est vide"
+msgstr "Your cart is empty"
+
+#: .\app_mopakam\templates\cart\cart.html:103
+msgid "Découvrez nos produits et ajoutez-les à votre panier"
+msgstr "Discover our products and add them to your cart"
+
+#: .\app_mopakam\templates\cart\cart.html:105
+#: .\app_mopakam\templates\commande\historique_commandes.html:128
+msgid "Voir les produits"
+msgstr "View products"
+
+#: .\app_mopakam\templates\commande\commande.html:7
+msgid "Mes commandes"
+msgstr "My orders"
+
+#: .\app_mopakam\templates\commande\commande.html:13
+#, python-format
+msgid "Commande #%(order.id)s"
+msgstr "Order #%(order.id)s"
+
+#: .\app_mopakam\templates\commande\commande.html:21
+msgid "Statut:"
+msgstr "Status:"
+
+#: .\app_mopakam\templates\commande\commande.html:29
+msgid "Mode de paiement:"
+msgstr "Payment method:"
+
+#: .\app_mopakam\templates\commande\commande.html:37
+#: .\app_mopakam\templates\commande\confirmation_commande.html:35
+msgid "Articles commandés:"
+msgstr "Ordered items:"
+
+#: .\app_mopakam\templates\commande\commande.html:42
+#: .\app_mopakam\templates\commande\confirmation_commande.html:40
+#: .\app_mopakam\templates\commande\historique_commandes.html:86
+#: .\templates\layouts\base.html:243
+msgid "Produit"
+msgstr "product"
+
+#: .\app_mopakam\templates\commande\commande.html:43
+#: .\app_mopakam\templates\commande\confirmation_commande.html:41
+#: .\app_mopakam\templates\commande\historique_commandes.html:87
+msgid "Quantité"
+msgstr "quantity"
+
+#: .\app_mopakam\templates\commande\commande.html:44
+#: .\app_mopakam\templates\commande\confirmation_commande.html:42
+#: .\app_mopakam\templates\commande\historique_commandes.html:88
+msgid "Prix unitaire"
+msgstr "unit price"
+
+#: .\app_mopakam\templates\commande\commande.html:45
+#: .\app_mopakam\templates\commande\confirmation_commande.html:43
+#: .\app_mopakam\templates\commande\formulaire_commande.html:113
+#: .\app_mopakam\templates\commande\historique_commandes.html:26
+#: .\app_mopakam\templates\commande\historique_commandes.html:89
+#: .\app_mopakam\templates\commande\valider_commande.html:90
+msgid "Total"
+msgstr "Total"
+
+#: .\app_mopakam\templates\commande\commande.html:64
+#: .\app_mopakam\templates\commande\historique_commandes.html:155
+msgid "Êtes-vous sûr de vouloir annuler cette commande ?"
+msgstr "Are you sure you want to cancel this order?"
+
+#: .\app_mopakam\templates\commande\commande.html:65
+msgid "Annuler la commande"
+msgstr "Cancel order"
+
+#: .\app_mopakam\templates\commande\commande.html:75
+msgid "Vous n'avez pas encore passe de commande."
+msgstr "You have not placed any orders yet."
+
+#: .\app_mopakam\templates\commande\commande.html:76
+msgid "Découvrez nos produits"
+msgstr "Discover our products"
+
+#: .\app_mopakam\templates\commande\confirmation_commande.html:11
+msgid "Confirmation de Commande"
+msgstr "Order confirmation"
+
+#: .\app_mopakam\templates\commande\confirmation_commande.html:16
+msgid "Merci pour votre commande!"
+msgstr "Thank you for your order!"
+
+#: .\app_mopakam\templates\commande\confirmation_commande.html:17
+msgid "Votre commande a été enregistrée avec succès."
+msgstr "Your order has been successfully registered."
+
+#: .\app_mopakam\templates\commande\confirmation_commande.html:21
+msgid "Détails de la commande:"
+msgstr "Order details:"
+
+#: .\app_mopakam\templates\commande\confirmation_commande.html:22
+msgid "Numéro de commande:"
+msgstr "Order number:"
+
+#: .\app_mopakam\templates\commande\confirmation_commande.html:23
+msgid "Date:"
+msgstr "Date:"
+
+#: .\app_mopakam\templates\commande\confirmation_commande.html:28
+msgid "Informations de livraison:"
+msgstr "Delivery information:"
+
+#: .\app_mopakam\templates\commande\confirmation_commande.html:29
+msgid "Nom:"
+msgstr "Name:"
+
+#: .\app_mopakam\templates\commande\confirmation_commande.html:30
+msgid "Adresse:"
+msgstr "Address:"
+
+#: .\app_mopakam\templates\commande\confirmation_commande.html:31
+msgid "Téléphone:"
+msgstr "Phone:"
+
+#: .\app_mopakam\templates\commande\confirmation_commande.html:61
+msgid "Un email de confirmation a été envoyé à"
+msgstr "An confirmation email has been sent to"
+
+#: .\app_mopakam\templates\commande\confirmation_commande.html:64
+msgid "Retour à l'accueil"
+msgstr "Back to home"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:12
+msgid "Informations de commande"
+msgstr "Order information"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:20
+msgid "Informations personnelles"
+msgstr "Personal information"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:23
+msgid "Nom complet*"
+msgstr "Full name*"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:27
+msgid "Email*"
+msgstr "Email*"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:31
+msgid "Téléphone*"
+msgstr "Phone*"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:39
+msgid "Adresse de livraison"
+msgstr "Delivery address"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:42
+msgid "Adresse complète*"
+msgstr "Full address*"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:46
+msgid "Ville*"
+msgstr "City*"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:50
+msgid "Quartier"
+msgstr "Neighborhood"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:58
+#: .\app_mopakam\templates\commande\valider_commande.html:46
+msgid "Mode de paiement"
+msgstr "Payment method"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:62
+#: .\app_mopakam\templates\commande\valider_commande.html:55
+msgid "Paiement à la livraison"
+msgstr "Cash on delivery"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:68
+#: .\app_mopakam\templates\commande\historique_commandes.html:58
+#: .\app_mopakam\templates\commande\valider_commande.html:61
+msgid "Mobile Money"
+msgstr "Mobile Money"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:75
+msgid "Notes supplémentaires"
+msgstr "Additional notes"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:76
+msgid "Instructions spéciales pour la livraison..."
+msgstr "Special instructions for delivery..."
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:80
+#: .\app_mopakam\templates\commande\valider_commande.html:66
+msgid "Confirmer la commande"
+msgstr "Confirm order"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:91
+msgid "Résumé de la commande"
+msgstr "Order summary"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:104
+#: .\app_mopakam\templates\commande\valider_commande.html:81
+msgid "Sous-total"
+msgstr "Sub-total"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:108
+#: .\app_mopakam\templates\commande\valider_commande.html:85
+msgid "Frais de livraison"
+msgstr "Delivery fee"
+
+#: .\app_mopakam\templates\commande\formulaire_commande.html:133
+msgid "Veuillez entrer un numéro de téléphone valide (10 chiffres)"
+msgstr "Please enter a valid phone number (10 digits)"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:11
+msgid "Historique de vos commandes"
+msgstr "Order history"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:22
+msgid "Référence"
+msgstr "Reference"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:23
+msgid "Date"
+msgstr "Date"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:24
+msgid "Statut"
+msgstr "Status"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:25
+msgid "Méthode de paiement"
+msgstr "Payment method"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:27
+#: .\app_mopakam\templates\product_management\list.html:69
+msgid "Actions"
+msgstr "Actions"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:39
+msgid "En attente"
+msgstr "Pending"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:41
+msgid "Paiement confirmé"
+msgstr "Payment confirmed"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:43
+msgid "En préparation"
+msgstr "In preparation"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:45
+msgid "Expédiée"
+msgstr "Shipped"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:47
+msgid "Livrée"
+msgstr "Delivered"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:49
+msgid "Annulée"
+msgstr "Canceled"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:51
+msgid "Remboursée"
+msgstr "Refunded"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:56
+msgid "Cash"
+msgstr "Cash"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:60
+msgid "Carte Bancaire"
+msgstr "Bank Card"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:67
+#: .\app_mopakam\templates\commande\historique_commandes.html:147
+msgid "Détails"
+msgstr "Details"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:72
+msgid "Annuler"
+msgstr "Cancel"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:81
+msgid "Détails de la commande"
+msgstr "Order details"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:125
+msgid "Vous n'avez pas encore de commandes"
+msgstr "You don't have any orders yet"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:126
+msgid "Commencez vos achats dés maintenant !"
+msgstr "Start your purchases now!"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:144
+msgid "Fermer"
+msgstr "Close"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:167
+msgid "Erreur lors de l\\'annulation de la commande"
+msgstr "Error while canceling the order"
+
+#: .\app_mopakam\templates\commande\historique_commandes.html:172
+msgid "Une erreur est survenue"
+msgstr "An error occurred"
+
+#: .\app_mopakam\templates\commande\valider_commande.html:12
+msgid "Validation de la commande"
+msgstr "Order validation"
+
+#: .\app_mopakam\templates\commande\valider_commande.html:15
+msgid "Articles dans votre panier"
+msgstr "Items in your cart"
+
+#: .\app_mopakam\templates\commande\valider_commande.html:77
+msgid "Récapitulatif"
+msgstr "Summary"
+
+#: .\app_mopakam\templates\commande\valider_commande.html:86
+msgid "Gratuit"
+msgstr "free"
+
+#: .\app_mopakam\templates\pages\accueil.html:10
+#: .\templates\layouts\base.html:374
+msgid "PRODUIT"
+msgstr "PRODUCT"
+
+#: .\app_mopakam\templates\pages\accueil.html:22
+#: .\app_mopakam\templates\pages\accueil.html:64
+#: .\app_mopakam\templates\pages\entreprise.html:74
+#: .\app_mopakam\templates\pages\entreprise.html:77
+#: .\app_mopakam\templates\pages\entreprise.html:116
+#: .\app_mopakam\templates\pages\entreprise.html:119
+msgid "Porc"
+msgstr "Pork"
+
+#: .\app_mopakam\templates\pages\accueil.html:23
+#: .\app_mopakam\templates\pages\accueil.html:65
+#: .\app_mopakam\templates\pages\entreprise.html:78
+#: .\app_mopakam\templates\pages\entreprise.html:120
+msgid "Savourez la riche saveur de notre porc de première qualité, sélectionné de "
+"manière experte pour une fraicheur imbattable."
+msgstr "Enjoy the rich flavor of our pork of first quality, carefully selected "
+"for its crispiness."
+
+#: .\app_mopakam\templates\pages\accueil.html:24
+#: .\app_mopakam\templates\pages\accueil.html:36
+#: .\app_mopakam\templates\pages\accueil.html:48
+#: .\app_mopakam\templates\pages\accueil.html:66
+#: .\app_mopakam\templates\pages\accueil.html:78
+#: .\app_mopakam\templates\pages\accueil.html:90
+#: .\app_mopakam\templates\pages\entreprise.html:79
+#: .\app_mopakam\templates\pages\entreprise.html:91
+#: .\app_mopakam\templates\pages\entreprise.html:103
+#: .\app_mopakam\templates\pages\entreprise.html:121
+#: .\app_mopakam\templates\pages\entreprise.html:133
+#: .\app_mopakam\templates\pages\entreprise.html:145
+msgid "ACHETEZ MAINTENANT"
+msgstr "BUY NOW"
+
+#: .\app_mopakam\templates\pages\accueil.html:34
+#: .\app_mopakam\templates\pages\accueil.html:76
+#: .\app_mopakam\templates\pages\entreprise.html:86
+#: .\app_mopakam\templates\pages\entreprise.html:89
+#: .\app_mopakam\templates\pages\entreprise.html:128
+#: .\app_mopakam\templates\pages\entreprise.html:131
+msgid "Viande De Lapin"
+msgstr "Lapin Meat"
+
+#: .\app_mopakam\templates\pages\accueil.html:35
+#: .\app_mopakam\templates\pages\accueil.html:77
+#: .\app_mopakam\templates\pages\entreprise.html:90
+#: .\app_mopakam\templates\pages\entreprise.html:132
+msgid "Savourez le gout délicat de notre viande de lapin, riche en protéines et "
+"pauvre en matières grasses."
+msgstr "Enjoy the delicate flavor of our lamb, rich in proteins and free of fat."
+
+#: .\app_mopakam\templates\pages\accueil.html:46
+#: .\app_mopakam\templates\pages\accueil.html:88
+#: .\app_mopakam\templates\pages\entreprise.html:98
+#: .\app_mopakam\templates\pages\entreprise.html:101
+#: .\app_mopakam\templates\pages\entreprise.html:140
+#: .\app_mopakam\templates\pages\entreprise.html:143
+msgid "OEUF"
+msgstr "Egg"
+
+#: .\app_mopakam\templates\pages\accueil.html:47
+#: .\app_mopakam\templates\pages\accueil.html:89
+#: .\app_mopakam\templates\pages\entreprise.html:102
+#: .\app_mopakam\templates\pages\entreprise.html:144
+msgid ""
+"Savourez la fraicheur de nos oeufs fermiers, parfaits pour chaque repas."
+msgstr "Enjoy the crispness of our eggs, perfect for every meal."
+
+#: .\app_mopakam\templates\pages\accueil.html:98
+#: .\app_mopakam\templates\pages\entreprise.html:153
+msgid "Précédent"
+msgstr "Previous"
+
+#: .\app_mopakam\templates\pages\accueil.html:102
+#: .\app_mopakam\templates\pages\entreprise.html:157
+msgid "Suivant"
+msgstr "Next"
+
+#: .\app_mopakam\templates\pages\accueil.html:113
+msgid "A PROPOS DE NOUS"
+msgstr "About Us"
+
+#: .\app_mopakam\templates\pages\accueil.html:127
+msgid "Groupe Mopakam - La Qualité du Champ à l'Assiette"
+msgstr "Mopakam Group - The Quality of the Field to the Plate"
+
+#: .\app_mopakam\templates\pages\accueil.html:131
+msgid ""
+"Nous offrons du porc, de la viande de lapin et des oeufs frais de ferme,avec "
+"engagement envers des pratiques durables et une qualité exceptionnelle."
+msgstr "We offer pork, lamb meat, and fresh eggs from the farm, with commitment "
+"to sustainable practices and exceptional quality."
+
+#: .\app_mopakam\templates\pages\accueil.html:134
+msgid "COMMENCEZ AUJOURD'HUI"
+msgstr "GET STARTED TODAY"
+
+#: .\app_mopakam\templates\pages\accueil.html:148
+msgid "VOYONS CE QUE DISENT NOS CLIENTS"
+msgstr "SEE WHAT OUR CUSTOMERS SAY"
+
+#: .\app_mopakam\templates\pages\accueil.html:150
+msgid ""
+"Découvrez les avis de nos clients satisfaits sur nos produits frais et de "
+"qualité."
+msgstr "Discover reviews from our satisfied customers about our fresh and quality products."
+
+#: .\app_mopakam\templates\pages\accueil.html:158
+msgid ""
+"J'achète régulièrement mes œufs et mon poulet ici. La qualité est toujours "
+"au rendez-vous, et la fraîcheur des produits est irréprochable. Je "
+"recommande vivement !"
+msgstr "I buy regularly my eggs and my chicken here. The quality is always at "
+"the right place, and the freshness of the products is unmatched. I recommend "
+"it highly!"
+
+#: .\app_mopakam\templates\pages\accueil.html:161
+msgid "Sophie Dupont"
+msgstr "Sophie Dupont"
+
+#: .\app_mopakam\templates\pages\accueil.html:164
+msgid "Cliente fidèle"
+msgstr "Regular Customer"
+
+#: .\app_mopakam\templates\pages\accueil.html:175
+msgid ""
+"La viande de lapin que j'ai commandée était d'une tendreté incroyable. J'ai "
+"pu préparer un excellent repas pour ma famille. Merci pour votre "
+"professionnalisme !"
+msgstr "The lamb meat I ordered was of an incredible tenderness. I was able to "
+"prepare a delicious meal for my family. Thank you for your professionalism!"
+
+#: .\app_mopakam\templates\pages\accueil.html:178
+msgid "Jean-Luc Martin"
+msgstr "Jean-Luc Martin"
+
+#: .\app_mopakam\templates\pages\accueil.html:181
+msgid "Amateur de cuisine"
+msgstr "Cook"
+
+#: .\app_mopakam\templates\pages\accueil.html:192
+msgid ""
+"Enfin un endroit où je peux me procurer de la viande de porc fraîche et "
+"locale ! La livraison est rapide, et les prix sont très abordables."
+msgstr "Finally, a place where I can get fresh pork and local meat! The "
+"delivery is fast, and the prices are very affordable."
+
+#: .\app_mopakam\templates\pages\accueil.html:195
+msgid "Marie Lefebvre"
+msgstr "Marie Lefebvre"
+
+#: .\app_mopakam\templates\pages\accueil.html:198
+msgid "Cliente satisfaite"
+msgstr "Regular Customer"
+
+#: .\app_mopakam\templates\pages\accueil.html:223
+msgid "ENTRER EN CONTACT"
+msgstr "CONTACT US"
+
+#: .\app_mopakam\templates\pages\accueil.html:224
+msgid "Contactez-nous pour toute demande ou assistance."
+msgstr "Contact us for any inquiry or assistance."
+
+#: .\app_mopakam\templates\pages\accueil.html:225
+msgid "Commencez aujourd'hui"
+msgstr "GET STARTED TODAY"
+
+#: .\app_mopakam\templates\pages\apropos.html:9
+#: .\templates\layouts\base.html:216
+msgid "GROUPE MOPAKAM"
+msgstr "GROUP MOPAKAM"
+
+#: .\app_mopakam\templates\pages\apropos.html:15
+msgid ""
+"La Groupe Mopakam est une entreprise spécialisée dans la production et la "
+"vente de produits fermiers, de qualité supérieure,incluant des viandes de "
+"porc et de lapin ainsi que des oeufs frais. nous nous engageons à offrir des "
+"produits fermiers frais et authentiques,issus de pratiques respectueuses de "
+"l'environnement."
+msgstr "The Group Mopakam is a specialized enterprise specializing in the "
+"production and sale of farm products, of high quality,including pork and "
+"lamb meat, as well as fresh eggs. we commit to offering fresh, authentic "
+"farm products, sourced in practices that respect the environment."
+
+#: .\app_mopakam\templates\pages\apropos.html:37
+msgid "NOTRE MISSION"
+msgstr "OUR MISSION"
+
+#: .\app_mopakam\templates\pages\apropos.html:41
+#: .\app_mopakam\templates\pages\apropos.html:66
+msgid ""
+"choisir groupe mopakam , c'est choisir la qualité et la transparence.nous "
+"nous distinguons par notre engagement envers la fraicheur et la provenance "
+"locale de nos produits nos viandes et oeufs sont issus de pratiques "
+"respectueuses de l'environnement et des animaux. garatissant des produits "
+"savoureux et sains pour votre famille.avec un controle strict de qualité à "
+"chaque étape, nous offrons une expérience de consommation en toute confiance."
+msgstr "Choose Mopakam Group, it's choose quality and transparency. We "
+"distinguish by our commitment to fresh and local products. Our pork and lamb "
+"meat, as well as fresh eggs are sourced from practices that respect the "
+"environment and animals. Ensuring delicious and healthy for your family. With "
+"a strict quality control at each stage, we offer a experience of consumption "
+"with confidence."
+
+#: .\app_mopakam\templates\pages\apropos.html:44
+msgid "DÉCOUVREZ NOS PRODUITS FERMIERS"
+msgstr "DISCOVER OUR FARM PRODUCTS"
+
+#: .\app_mopakam\templates\pages\apropos.html:62
+msgid "POURQUOI NOUS ?"
+msgstr "WHY US"
+
+#: .\app_mopakam\templates\pages\apropos.html:70
+msgid "DÉCOUVREZ NOTRE DIFFÉRENCE"
+msgstr "DISCOVER OUR DIFFERENCE"
+
+#: .\app_mopakam\templates\pages\connexion.html:16
+msgid "Créer un compte"
+msgstr "CREATE AN ACCOUNT"
+
+#: .\app_mopakam\templates\pages\connexion.html:32
+msgid "Ou utiliser votre email pour vous enregistrer"
+msgstr "OR USE YOUR EMAIL TO REGISTER"
+
+#: .\app_mopakam\templates\pages\connexion.html:34
+msgid "Nom et Prénom"
+msgstr "NAME AND FIRST NAME"
+
+#: .\app_mopakam\templates\pages\connexion.html:35
+#: .\app_mopakam\templates\pages\connexion.html:62
+msgid "Email"
+msgstr "EMAIL"
+
+#: .\app_mopakam\templates\pages\connexion.html:36
+#: .\app_mopakam\templates\pages\contact.html:33
+msgid "Téléphone"
+msgstr "PHONE"
+
+#: .\app_mopakam\templates\pages\connexion.html:37
+#: .\app_mopakam\templates\pages\connexion.html:63
+msgid "Mot de passe"
+msgstr "PASSWORD"
+
+#: .\app_mopakam\templates\pages\connexion.html:39
+msgid "Inscription"
+msgstr "REGISTRATION"
+
+#: .\app_mopakam\templates\pages\connexion.html:49
+msgid "Connectez-vous"
+msgstr "login"
+
+#: .\app_mopakam\templates\pages\connexion.html:60
+msgid "Ou utiliser votre email mot de passe"
+msgstr "or user your email and password"
+
+#: .\app_mopakam\templates\pages\connexion.html:64
+msgid "Mot de passe, oubliez ?"
+msgstr "Forgot password ?"
+
+#: .\app_mopakam\templates\pages\connexion.html:65
+#: .\app_mopakam\templates\pages\connexion.html:79
+#: .\templates\layouts\base.html:273
+msgid "Connexion"
+msgstr "Connection"
+
+#: .\app_mopakam\templates\pages\connexion.html:77
+msgid "Salut !"
+msgstr "Hello !"
+
+#: .\app_mopakam\templates\pages\connexion.html:78
+msgid "Connecte-toi et accède au site"
+msgstr "login to access the site"
+
+#: .\app_mopakam\templates\pages\connexion.html:85
+msgid "Bienvenue !"
+msgstr "Welcome !"
+
+#: .\app_mopakam\templates\pages\connexion.html:86
+msgid "Enregistre-toi et accède au site"
+msgstr "Register to access the site"
+
+#: .\app_mopakam\templates\pages\connexion.html:87
+msgid "Enregistrement"
+msgstr "Registration"
+
+#: .\app_mopakam\templates\pages\contact.html:8
+#: .\templates\layouts\base.html:358
+msgid "CONTACTEZ-NOUS"
+msgstr "CONTACT US"
+
+#: .\app_mopakam\templates\pages\contact.html:9
+msgid ""
+"VOUS AVEZ DES QUESTIONS OU SOUHAITEZ EN SAVOIR PLUS SUR NOS PRODUITS "
+"FERMIERS ? CONTACTEZ-NOUS DÈS AUJOURD'HUI – NOTRE ÉQUIPE EST LÀ POUR VOUS "
+"AIDER AVEC PLAISIR !"
+msgstr "DO YOU HAVE QUESTIONS OR WANT TO KNOW MORE ABOUT OUR PRODUCTS"
+
+#: .\app_mopakam\templates\pages\contact.html:10
+msgid "Téléphones :"
+msgstr "Phones :"
+
+#: .\app_mopakam\templates\pages\contact.html:16
+msgid "Adresse :"
+msgstr "Address :"
+
+#: .\app_mopakam\templates\pages\contact.html:17
+msgid "AGBOVILLE - M'BERIÉ, SOUS-PRÉFECTURE DE GRAND-MORIÉ, CÔTE D'IVOIRE"
+msgstr "AGBOVILLE - M'BERIÉ, SOUS-PRÉFECTURE DE GRAND-MORIÉ, CÔTE D'IVOIRE"
+
+#: .\app_mopakam\templates\pages\contact.html:18
+msgid "Email :"
+msgstr "Email :"
+
+#: .\app_mopakam\templates\pages\contact.html:23
+msgid "Laissez-nous un message"
+msgstr "Leave us a message"
+
+#: .\app_mopakam\templates\pages\contact.html:31
+#: .\app_mopakam\templates\product_management\list.html:65
+msgid "Nom"
+msgstr "Name"
+
+#: .\app_mopakam\templates\pages\contact.html:32
+msgid "E-mail"
+msgstr "Email"
+
+#: .\app_mopakam\templates\pages\contact.html:34
+msgid "Votre message"
+msgstr "Your message"
+
+#: .\app_mopakam\templates\pages\contact.html:36
+msgid "Envoyer le message"
+msgstr "Send message"
+
+#: .\app_mopakam\templates\pages\contact.html:44
+msgid "Localisation"
+msgstr "Location"
+
+#: .\app_mopakam\templates\pages\entreprise.html:10
+msgid "PRÉSENTATION DE <br>L'ENTREPRISE"
+msgstr "PRESENTATION OF <br>THE ENTERPRISE"
+
+#: .\app_mopakam\templates\pages\entreprise.html:16
+msgid ""
+"Le groupe mopakam s'engage à fournir des produits agricoles de première "
+"qualité directement de nos fermes à votre table. spécialistes dans la viande "
+"fraîche de porc, de lapin et d'œufs, nous nous engageons à adopter des "
+"pratiques agricoles éthiques et durables qui favorisent le bienfait animal "
+"et offrent un goût et une qualité exceptionnels."
+msgstr ""
+“The mopakam group is committed to providing premium agricultural products”
+"quality directly from our farms to your table. specialists in meat"
+"fresh pork, rabbit and eggs, we are committed to adopting "
+“ethical and sustainable agricultural practices that promote animal welfare”
+"and offer exceptional taste and quality."
+
+#: .\app_mopakam\templates\pages\entreprise.html:33
+msgid "MISSION ET VALEURS"
+msgstr "MISSION AND VALUES"
+
+#: .\app_mopakam\templates\pages\entreprise.html:37
+msgid ""
+"au groupe mopakam, nous croyons en une agriculture respectueuse des animaux "
+"et de l'environnement tout en garatissant des produits de la plus haute "
+"qualité qualité à nos clients. notre mission est de produire des produits "
+"agricoles frais et sains qui favorisent un mode de vie sain et protègent "
+"notre planète."
+msgstr ""
+"at the mopakam group, we believe in animal-friendly agriculture"
+"and the environment while guaranteeing products of the highest quality"
+"quality quality to our customers. our mission is to produce products"
+"fresh and healthy agricultural products that promote a healthy lifestyle and protect"
+"our planet."
+
+#: .\app_mopakam\templates\pages\entreprise.html:40
+msgid "EN SAVOIR PLUS"
+msgstr "LEARN MORE"
+
+#: .\app_mopakam\templates\pages\entreprise.html:46
+msgid "groupe mopakam, nous croyons en une agriculture"
+msgstr "THE GROUP mopakam BELIEVES IN A AGRICULTURE"
+
+#: .\app_mopakam\templates\pages\entreprise.html:54
+msgid "EXPERTISE & EXPERIENCE"
+msgstr "EXPERTISE AND EXPERIENCE"
+
+#: .\app_mopakam\templates\pages\entreprise.html:56
+msgid ""
+"Fort de ses années d'expérience dans le domaine agricole, le groupe mopakam "
+"apporte une expertise reconnue à l'expérience de la ferme à la table. Notre "
+"équipe combine des pratiques agricoles traditionnelles avec des techniques "
+"modernes pour offrir une qualité et un goût constants. Nous sommes fiers "
+"d'être des leaders dans l'agriculture éthiques et durable."
+msgstr ""
+"With its years of experience in the agricultural field, the mopakam group"
+"brings recognized expertise to the farm-to-table experience. Our “
+"team combines traditional agricultural practices with techniques"
+"modern to offer consistent quality and taste. We are proud"
+"to be leaders in ethical and sustainable agriculture."
+
+#: .\app_mopakam\templates\pages\entreprise.html:65
+#: .\app_mopakam\templates\pages\produit.html:8
+msgid "NOS PRODUITS"
+msgstr "OUR PRODUCTS"
+
+#: .\app_mopakam\templates\pages\produit.html:17
+msgid "Image non disponible"
+msgstr "Image not available"
+
+#: .\app_mopakam\templates\pages\produit.html:36
+msgid "Rupture de stock"
+msgstr "Stock out"
+
+#: .\app_mopakam\templates\pages\produit.html:38
+msgid "AJOUTER AU PANIER"
+msgstr "ADD TO CART"
+
+#: .\app_mopakam\templates\pages\produit.html:48
+msgid "Aucun produit disponible pour le moment."
+msgstr "No product available for the moment."
+
+#: .\app_mopakam\templates\product_management\create.html:11
+#: .\app_mopakam\templates\product_management\list.html:13
+msgid "Nouveau Produit"
+msgstr "NEW PRODUCT"
+
+#: .\app_mopakam\templates\product_management\create.html:27
+#: .\app_mopakam\templates\product_management\edit.html:27
+msgid "Nom du produit"
+msgstr "Product name"
+
+#: .\app_mopakam\templates\product_management\create.html:30
+#: .\app_mopakam\templates\product_management\edit.html:30
+msgid "Veuillez entrer un nom pour le produit."
+msgstr "Please enter a product name."
+
+#: .\app_mopakam\templates\product_management\create.html:35
+#: .\app_mopakam\templates\product_management\edit.html:35
+#: .\app_mopakam\templates\product_management\list.html:66
+msgid "Catégorie"
+msgstr "Category"
+
+#: .\app_mopakam\templates\product_management\create.html:37
+#: .\app_mopakam\templates\product_management\edit.html:37
+msgid "Sélectionnez une catégorie"
+msgstr "Select a category"
+
+#: .\app_mopakam\templates\product_management\create.html:43
+#: .\app_mopakam\templates\product_management\edit.html:45
+msgid "Veuillez sélectionner une catégorie."
+msgstr "Please select a category."
+
+#: .\app_mopakam\templates\product_management\create.html:46
+#: .\app_mopakam\templates\product_management\edit.html:48
+msgid ""
+"Si la catégorie n'existe pas, elle sera créée automatiquement. Pour ajouter "
+"une nouvelle catégorie, tapez simplement son nom."
+msgstr "If the category does not exist, it will be created automatically. To add "
+"a new category, simply type its name."
+
+#: .\app_mopakam\templates\product_management\create.html:51
+#: .\app_mopakam\templates\product_management\edit.html:53
+msgid "Description"
+msgstr "Description"
+
+#: .\app_mopakam\templates\product_management\create.html:54
+#: .\app_mopakam\templates\product_management\edit.html:56
+msgid "Veuillez entrer une description pour le produit."
+msgstr "Please enter a product description."
+
+#: .\app_mopakam\templates\product_management\create.html:61
+#: .\app_mopakam\templates\product_management\edit.html:63
+msgid "Prix (FCFA)"
+msgstr "Price (FCFA)"
+
+#: .\app_mopakam\templates\product_management\create.html:64
+#: .\app_mopakam\templates\product_management\edit.html:66
+msgid "Veuillez entrer un prix valide."
+msgstr "Please enter a valid price."
+
+#: .\app_mopakam\templates\product_management\create.html:70
+#: .\app_mopakam\templates\product_management\edit.html:72
+msgid "Quantité en stock"
+msgstr "Stock quantity"
+
+#: .\app_mopakam\templates\product_management\create.html:73
+#: .\app_mopakam\templates\product_management\edit.html:75
+msgid "Veuillez entrer une quantité valide."
+msgstr "Please enter a valid quantity."
+
+#: .\app_mopakam\templates\product_management\create.html:80
+#: .\app_mopakam\templates\product_management\edit.html:82
+msgid "Image du produit"
+msgstr "Product image"
+
+#: .\app_mopakam\templates\product_management\create.html:82
+#: .\app_mopakam\templates\product_management\edit.html:89
+msgid "Format recommandé : JPG, PNG. Taille maximale : 5MB"
+msgstr "Recommended format: JPG, PNG. Maximum size: 5MB"
+
+#: .\app_mopakam\templates\product_management\create.html:87
+#: .\app_mopakam\templates\product_management\edit.html:94
+msgid "Retour"
+msgstr "Back"
+
+#: .\app_mopakam\templates\product_management\create.html:90
+msgid "Enregistrer"
+msgstr "Save"
+
+#: .\app_mopakam\templates\product_management\create.html:122
+msgid "L\\'image ne doit pas dépasser 5MB"
+msgstr "The image must not exceed 5MB"
+
+#: .\app_mopakam\templates\product_management\edit.html:11
+msgid "Modifier le Produit"
+msgstr "Edit Product"
+
+#: .\app_mopakam\templates\product_management\edit.html:97
+msgid "Enregistrer les modifications"
+msgstr "Save changes"
+
+#: .\app_mopakam\templates\product_management\list.html:9
+msgid "Gestion des Produits"
+msgstr "Product Management"
+
+#: .\app_mopakam\templates\product_management\list.html:23
+msgid "Rechercher un produit..."
+msgstr "Search product..."
+
+#: .\app_mopakam\templates\product_management\list.html:31
+msgid "Toutes les catégories"
+msgstr "All categories"
+
+#: .\app_mopakam\templates\product_management\list.html:42
+msgid "Réinitialiser"
+msgstr "Reset"
+
+#: .\app_mopakam\templates\product_management\list.html:67
+msgid "Prix"
+msgstr "Price"
+
+#: .\app_mopakam\templates\product_management\list.html:68
+msgid "Stock"
+msgstr "Stock"
+
+#: .\app_mopakam\templates\product_management\list.html:95
+msgid "Modifier"
+msgstr "Edit"
+
+#: .\app_mopakam\templates\product_management\list.html:98
+msgid "Supprimer"
+msgstr "Delete"
+
+#: .\app_mopakam\templates\product_management\list.html:110
+msgid "Aucun produit ne correspond à votre recherche."
+msgstr "No products found."
+
+#: .\app_mopakam\templates\product_management\list.html:112
+msgid "Aucun produit disponible."
+msgstr "No products available."
+
+#: .\app_mopakam\templates\product_management\list.html:145
+msgid "Êtes-vous sûr de vouloir supprimer ce produit ?"
+msgstr "Are you sure you want to delete this product?"
+
+#: .\app_mopakam\templates\product_management\list.html:162
+msgid "Produit supprimé avec succès!"
+msgstr "Product deleted successfully!"
+
+#: .\app_mopakam\templates\product_management\list.html:172
+#: .\app_mopakam\templates\product_management\list.html:177
+msgid "Une erreur est survenue lors de la suppression"
+msgstr "An error occurred while deleting the product."
+
+#: .\app_mopakam\templates\registration\email_verification.html:20
+msgid "Vérification par Email"
+msgstr "Email Verification"
+
+#: .\app_mopakam\templates\registration\email_verification.html:30
+msgid ""
+"Un code de vérification à 6 chiffres a été envoyé à votre adresse e-mail. "
+"Veuillez entrer le code ci-dessous."
+msgstr "A 6-digit verification code has been sent to your email address. Please enter the code below."
+
+#: .\app_mopakam\templates\registration\email_verification.html:34
+msgid "Code de Vérification"
+msgstr "Verification Code"
+
+#: .\app_mopakam\templates\registration\email_verification.html:40
+msgid "Vérifier"
+msgstr "Verify"
+
+#: .\env\Lib\site-packages\django\contrib\messages\apps.py:16
+msgid "Messages"
+msgstr "Messages"
+
+#: .\env\Lib\site-packages\django\contrib\sitemaps\apps.py:8
+msgid "Site Maps"
+msgstr "Site Maps"
+
+#: .\env\Lib\site-packages\django\contrib\staticfiles\apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: .\env\Lib\site-packages\django\core\paginator.py:30
+msgid "…"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\paginator.py:32
+msgid "That page number is not an integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\paginator.py:33
+msgid "That page number is less than 1"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\paginator.py:34
+msgid "That page contains no results"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:70
+msgid "Enter a valid domain name."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:155
+#: .\env\Lib\site-packages\django\forms\fields.py:768
+msgid "Enter a valid URL."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:216
+msgid "Enter a valid integer."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:227
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: .\env\Lib\site-packages\django\core\validators.py:310
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:318
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:330
+#: .\env\Lib\site-packages\django\core\validators.py:339
+#: .\env\Lib\site-packages\django\core\validators.py:353
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2215
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:332
+msgid "IPv4"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:341
+#: .\env\Lib\site-packages\django\utils\ipv6.py:43
+msgid "IPv6"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:355
+msgid "IPv4 or IPv6"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:396
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:402
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:437
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:446
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:455
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:462
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:494
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:512
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:535
+#: .\env\Lib\site-packages\django\forms\fields.py:359
+#: .\env\Lib\site-packages\django\forms\fields.py:398
+msgid "Enter a number."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:537
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:542
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:547
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:618
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\core\validators.py:680
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\base.py:1572
+#: .\env\Lib\site-packages\django\forms\models.py:908
+msgid "and"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\base.py:1574
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\constraints.py:22
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:135
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:136
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1156
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1157
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1159
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1209
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1211
+msgid "String (unlimited)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1320
+msgid "Comma-separated integers"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1421
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1425
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1560
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1429
+msgid "Date (without time)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1556
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1564
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1569
+msgid "Date (with time)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1696
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1698
+msgid "Decimal number"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1859
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1863
+msgid "Duration"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1915
+msgid "Email address"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:1940
+msgid "File path"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2018
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2020
+msgid "Floating point number"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2060
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2062
+msgid "Integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2158
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2175
+msgid "Small integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2183
+msgid "IPv4 address"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2214
+msgid "IP address"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2305
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2306
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2308
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2359
+msgid "Positive big integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2374
+msgid "Positive integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2389
+msgid "Positive small integer"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2405
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2441
+msgid "Text"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2521
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2525
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2529
+msgid "Time"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2637
+msgid "URL"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2661
+msgid "Raw binary data"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2726
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\__init__.py:2728
+msgid "Universally unique identifier"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\files.py:244
+msgid "File"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\json.py:24
+msgid "A JSON object"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\json.py:26
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\related.py:932
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\related.py:934
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\related.py:1228
+msgid "One-to-one relationship"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\related.py:1285
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\related.py:1287
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\db\models\fields\related.py:1335
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: .\env\Lib\site-packages\django\forms\boundfield.py:185
+msgid ":?.!"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:95
+msgid "This field is required."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:308
+msgid "Enter a whole number."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:479
+#: .\env\Lib\site-packages\django\forms\fields.py:1260
+msgid "Enter a valid date."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:502
+#: .\env\Lib\site-packages\django\forms\fields.py:1261
+msgid "Enter a valid time."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:529
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:563
+msgid "Enter a valid duration."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:564
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:633
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:634
+msgid "No file was submitted."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:635
+msgid "The submitted file is empty."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:637
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:642
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:710
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:882
+#: .\env\Lib\site-packages\django\forms\fields.py:968
+#: .\env\Lib\site-packages\django\forms\models.py:1592
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:970
+#: .\env\Lib\site-packages\django\forms\fields.py:1089
+#: .\env\Lib\site-packages\django\forms\models.py:1590
+msgid "Enter a list of values."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:1090
+msgid "Enter a complete value."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:1332
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\fields.py:1362
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: .\env\Lib\site-packages\django\forms\forms.py:94
+msgid ":"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\forms.py:230
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\forms\formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\forms\formsets.py:484
+#: .\env\Lib\site-packages\django\forms\formsets.py:491
+msgid "Order"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:901
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:906
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:913
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:922
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:1359
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:1450
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\models.py:1594
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\utils.py:227
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\widgets.py:461
+msgid "Clear"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\widgets.py:462
+msgid "Currently"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\widgets.py:463
+msgid "Change"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\widgets.py:800
+msgid "Unknown"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\widgets.py:801
+msgid "Yes"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\forms\widgets.py:802
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:873
+msgid "yes,no,maybe"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:903
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:920
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:922
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:924
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:926
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:928
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\template\defaultfilters.py:930
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dateformat.py:74
+msgid "p.m."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dateformat.py:75
+msgid "a.m."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dateformat.py:80
+msgid "PM"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dateformat.py:81
+msgid "AM"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dateformat.py:153
+msgid "midnight"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dateformat.py:155
+msgid "noon"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:25
+msgid "January"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:26
+msgid "February"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:27
+msgid "March"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:28
+msgid "April"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:29
+msgid "May"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:30
+msgid "June"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:31
+msgid "July"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:32
+msgid "August"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:33
+msgid "September"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:34
+msgid "October"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:35
+msgid "November"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:36
+msgid "December"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:39
+msgid "jan"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:40
+msgid "feb"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:41
+msgid "mar"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:42
+msgid "apr"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:43
+msgid "may"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:44
+msgid "jun"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:45
+msgid "jul"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:46
+msgid "aug"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:47
+msgid "sep"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:48
+msgid "oct"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:49
+msgid "nov"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:50
+msgid "dec"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\text.py:75
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\text.py:286
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: .\env\Lib\site-packages\django\utils\text.py:305
+#: .\env\Lib\site-packages\django\utils\timesince.py:135
+msgid ", "
+msgstr ""
+
+#: .\env\Lib\site-packages\django\utils\timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\utils\timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:29
+msgid "Forbidden"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:64
+#: .\env\Lib\site-packages\django\views\generic\dates.py:115
+#: .\env\Lib\site-packages\django\views\generic\dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:349
+#: .\env\Lib\site-packages\django\views\generic\dates.py:380
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:652
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\dates.py:692
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\generic\list.py:169
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\static.py:68
+#: .\env\Lib\site-packages\django\views\templates\directory_index.html:8
+#: .\env\Lib\site-packages\django\views\templates\directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:7
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:217
+msgid "Django Documentation"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:227
+msgid "Get started with Django"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:235
+msgid "Django Community"
+msgstr ""
+
+#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: .\env\Lib\site-packages\djongo\models\fields.py:630
+msgid "ObjectId"
+msgstr ""
+
+#: .\mopakam\settings.py:145
+msgid "francais"
+msgstr ""
+
+#: .\mopakam\settings.py:146
+msgid "English"
+msgstr ""
+
+#: .\templates\layouts\base.html:17
+msgid "Groupe Mopakam"
+msgstr "Groupe Mopakam"
+
+#: .\templates\layouts\base.html:227
+msgid "Menu"
+msgstr ""
+
+#: .\templates\layouts\base.html:234
+msgid "Accueil"
+msgstr "home"
+
+#: .\templates\layouts\base.html:237
+msgid "À propos"
+msgstr "about us"
+
+#: .\templates\layouts\base.html:240
+msgid "Entreprise"
+msgstr "company"
+
+#: .\templates\layouts\base.html:246
+msgid "Contact"
+msgstr "contact"
+
+#: .\templates\layouts\base.html:250
+msgid "Gestion Produits"
+msgstr "manage products"
+
+#: .\templates\layouts\base.html:263
+msgid "Bonjour,"
+msgstr "Hello"
+
+#: .\templates\layouts\base.html:264
+msgid "Déconnexion"
+msgstr "logout"
+
+#: .\templates\layouts\base.html:306
+msgid "Qualité certifié"
+msgstr "certified quality"
+
+#: .\templates\layouts\base.html:309
+msgid "Fraichement livré"
+msgstr "freshly delivered"
+
+#: .\templates\layouts\base.html:312
+msgid ""
+"Nos produits agricoles répondent à des normes rigoureuses de sécurité et de "
+"qualité, garantissant que chaque coupe de porc et de chaque morceau de "
+"viande , de lapin sont nutritifs, délicieux et issus de sources responsables."
+msgstr ""
+"Our agricultural products meet rigorous safety and quality standards."
+"quality, ensuring that every cut of pork and every piece of "
+"Rabbit meats are nutritious, delicious, and responsibly sourced."
+
+#: .\templates\layouts\base.html:316
+msgid "Acheter maintenant"
+msgstr "Buy Now"
+
+#: .\templates\layouts\base.html:369
+msgid "Liens"
+msgstr ""
+
+#: .\templates\layouts\base.html:371
+msgid "ACCUEIL"
+msgstr "home"
+
+#: .\templates\layouts\base.html:372
+msgid "A PROPOS"
+msgstr "about"
+
+#: .\templates\layouts\base.html:373
+msgid "ENTREPRISE"
+msgstr "company"
+
+#: .\templates\layouts\base.html:375
+msgid "CONTACT"
+msgstr "contact"
+
+#: .\templates\layouts\base.html:381
+msgid "Guide"
+msgstr "guide"
+
+#: .\templates\layouts\base.html:383
+msgid "Termes & condition"
+msgstr "terms & condition"
+
+#: .\templates\layouts\base.html:384
+msgid "Privacy policy"
+msgstr "privacy policy"
+
+#: .\templates\layouts\base.html:394
+msgid "envoyez Email à :"
+msgstr "send email to :"
+
+#: .\templates\layouts\base.html:407
+msgid "Emplacement"
+msgstr "location"
+
+#: .\templates\layouts\base.html:409
+msgid "AGBOVILLE - M'BERIÉ, sous préfecture de GRAND-MORIÉ, Côte d'Ivoire"
+msgstr "AGBOVILLE - M'BERIÉ, sous préfecture de GRAND-MORIÉ, Côte d'Ivoire"
+
+#: .\templates\layouts\base.html:430
+msgid "Tous droits réservés"
+msgstr "all rights reserved"
+
+#: .\templates\layouts\base.html:430
+msgid "Développé par"
+msgstr "developed by"
+
+#: .\templates\layouts\base.html:441
+msgid "Retour en haut"
+msgstr "back to top"
+
+#: .\templates\layouts\base.html:478
+msgid "Boucle infinie"
+msgstr "infinite loop"
+
+#: .\templates\layouts\base.html:479
+msgid "Espacement entre les items"
+msgstr "space between items"
+
+#: .\templates\layouts\base.html:480
+msgid "Masquer les flèches de navigation"
+msgstr ""
+
+#: .\templates\layouts\base.html:481
+msgid "Afficher les indicateurs"
+msgstr ""
+
+#: .\templates\layouts\base.html:482
+msgid "Activer le défilement automatique"
+msgstr ""
+
+#: .\templates\layouts\base.html:483
+msgid "Changer d'élément toutes les 2 secondes"
+msgstr ""
+
+#: .\templates\layouts\base.html:484
+msgid "Mettre en pause au survol"
+msgstr ""
+
+#: .\templates\layouts\base.html:486
+msgid "élément visible sur mobile"
+msgstr ""
+
+#: .\templates\layouts\base.html:487
+msgid "élément visible sur tablette"
+msgstr ""
+
+#: .\templates\layouts\base.html:488
+msgid "éléments visibles sur desktop"
+msgstr ""
