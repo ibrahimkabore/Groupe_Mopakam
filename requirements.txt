@@ -1,4 +1,7 @@
-﻿annotated-types==0.7.0
+--upgrade-strategy=eager
+pip==25.0.1
+sqlparse>=0.3.1
+annotated-types==0.7.0
 anyio==4.8.0
 asgiref==3.8.1
 certifi==2025.1.31
