@@ -1,0 +1,587 @@
+{% load static %}
+{% load static i18n %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="{% static 'images/imgs/logo/logo1.jpeg' %}" type="image/jpeg">
+  <title> {% trans "Groupe Mopakam" %} </title>
+ 
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+  
+  <!-- nav_header CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/nav_header.css' %}" />
+  
+  <!-- Owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}" />
+  
+  <!-- Nice select -->
+  <link rel="stylesheet" href="{% static 'css/nice-select.min.css' %}"
+      integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
+      crossorigin="anonymous" />
+  
+  <!-- Font Awesome style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  
+  <!-- Responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/base.css' %}" rel="stylesheet" />
+   <!-- Responsive style contact  -->
+   <link href="{% static 'css/contact.css' %}" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+ 
+<body class="sub_page">
+  {% get_available_languages as LANGUAGES %}
+  {% get_language_info_list for LANGUAGES as languages%}
+ 
+
+<main>
+    
+  <nav class="navbar navbar-expand-lg bg-dark sticky-top border-bottom" data-bs-theme="dark">
+    <div class="container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand" href="{% url 'accueil'%}">
+            {% trans "GROUPE MOPAKAM" %}
+        </a>
+        
+        <!-- Mobile Cart and Toggle Button -->
+        <div class="d-flex align-items-center order-lg-last">
+            {% if user.is_authenticated %}
+                <a href="{% url 'view_cart' %}" class="cart_link d-block d-lg-none me-3">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">{{ cart_count }}</span>
+                </a>
+            {% endif %}
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Collapsible Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <!-- Main Navigation Links -->
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item {% if request.resolver_match.url_name == 'accueil' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'accueil'%}">{% trans "Accueil" %}</a>
+                </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'apropos' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'apropos'%}">{% trans "À propos" %}</a>
+                </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'entreprise' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'entreprise'%}">{% trans "Entreprise" %}</a>
+                </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'produit' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'produit'%}">{% trans "Produit" %}</a>
+                </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'contact'%}">{% trans "Contact" %}</a>
+                </li>
+              
+            </ul>
+
+            <div class="user-section d-flex align-items-center">
+              <!-- Language Selector -->
+              <div class="language-selector ms-3">
+                  <div class="dropdown">
+                      <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                          {% get_current_language as CURRENT_LANGUAGE %}
+                          {% get_language_info for CURRENT_LANGUAGE as lang %}
+                          <i class="bi bi-globe me-1"></i>{{ lang.name_local }}
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                          {% get_available_languages as LANGUAGES %}
+                          {% get_language_info_list for LANGUAGES as languages %}
+                          {% for language in languages %}
+                              <li>
+                                  <form action="{% url 'set_language' %}" method="post" class="d-inline">
+                                      {% csrf_token %}
+                                      <input type="hidden" name="language" value="{{ language.code }}">
+                                      <button type="submit" class="dropdown-item">
+                                          {{ language.name_local }}
+                                      </button>
+                                  </form>
+                              </li>
+                          {% endfor %}
+                      </ul>
+                  </div>
+              </div>
+              
+              {% if user.is_authenticated %}
+                  <!-- Cart Link -->
+                  <a href="{% url 'view_cart' %}" class="cart_link d-none d-lg-flex me-3">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                      <span class="cart-count">{{ cart_count }}</span>
+                  </a>
+                  
+                  <!-- User Account Dropdown -->
+                  <div class="dropdown">
+                      <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown">
+                          {{ user.username }}
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                          {% if user.type_user == 'G' %}
+                          <li><a class="dropdown-item" href="{% url 'product_list' %}">{% trans "Gestion de stocks" %}</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="{% url 'admin_order_list' %}">{% trans "Administration des commandes" %}</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          {% endif %}
+                          <li><a class="dropdown-item" href="{% url 'deconnexion' %}">{% trans "Déconnexion" %}</a></li>
+                      </ul>
+                  </div>
+              {% else %}
+                  <!-- Login Button -->
+                  <div class="user-info">
+                      <a href="{% url 'login' %}" class="order_online login btn btn-sm btn-outline-light">
+                          {% trans "Connexion" %}
+                      </a>
+                  </div>
+              {% endif %}
+          </div>  
+              </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="position-relative p-md-5 bg-img bg-img1">
+  <div class="col-md-8 ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-10 ">
+          <div class="detail-box">
+            <h2>
+              {% trans "Qualité certifié" %}
+            </h2>
+            <h1>
+              {% trans "Fraichement livré" %}
+            </h1>
+            <p class="c-white">
+              {% trans "Nos produits agricoles répondent à des normes rigoureuses de sécurité et de qualité, garantissant que chaque coupe de porc et de chaque morceau de viande , de lapin sont nutritifs, délicieux et issus de sources responsables." %}
+            </p>
+            <div class="btn-box">
+              <a href="{% url 'produit'%}" class="btn-1">
+                {% trans "Acheter maintenant" %} </i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="bloc_logo">
+            <img src="{% static 'images/imgs/logo/loo2.png' %}">
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  
+</div> <br>
+<div class="container-fluid">
+  {% include "layouts/_message.html" %}
+  
+  </div>
+<br>
+{% block content %}
+
+{% endblock content %}
+
+<br><br>
+
+  <!-- footer section -->
+
+  <footer class="footer_section">
+    <div class="container">
+      <!-- Première ligne -->
+        <div class="footer-row">
+          <!-- Logo -->
+          <div class="footer-col">
+            <img src="{% static 'images/imgs/logo/logo2.png' %}" alt="Logo">
+          </div>
+    
+          <!-- Contact -->
+          <div class="footer-col">
+            <h4>{% trans "CONTACTEZ-NOUS" %}</h4>
+            <p><a href="tel:+2250150581026">+225 01 50 58 10 26</a></p>
+            <p><a href="tel:+2250584270808">+225 05 84 27 08 08</a></p>
+            <p><a href="tel:+2250767046204">+225 07 67 04 62 04</a></p>
+            <ul>
+              <li><a href="https://groupemopakam.com">https://groupemopakam.com</a></li>
+            </ul>
+          </div>
+    
+          <!-- Navigation -->
+          <div class="footer-col">
+            <h4>{% trans "Liens" %}</h4>
+            <ul>
+              <li><a href="{% url 'accueil'%}">{% trans "ACCUEIL" %}</a></li>
+              <li><a href="{% url 'apropos'%}">{% trans "A PROPOS" %}</a></li>
+              <li><a href="{% url 'entreprise'%}">{% trans "ENTREPRISE" %}</a></li>
+              <li><a href="{% url 'produit'%}">{% trans "PRODUIT" %}</a></li>
+              <li><a href="{% url 'contact'%}">{% trans "CONTACT" %}</a></li>
+            </ul>
+          </div>
+    
+          <!-- Guide -->
+          <div class="footer-col">
+            <h4>{% trans "Guide" %}</h4>
+            <ul>
+              <li><a href="#">{% trans "Termes & condition" %}</a></li>
+              <li><a href="#">{% trans "Privacy policy" %}</a></li>
+            </ul>
+          </div>
+        </div>
+    
+        <!-- Deuxième ligne -->
+        <div class="footer-row">
+          <!-- Email -->
+          <div class="footer-col">
+            <div class="footer_contact">
+              <h4>{% trans "envoyez Email à :" %}</h4>
+              <div class="contact_link_box">
+                <a href="mailto:info@groupemopakam.com">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span>info@groupemopakam.com</span>
+                </a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Emplacement -->
+          <div class="footer-col">
+            <div class="footer_contact">
+              <h4>{% trans "Emplacement" %}</h4>
+              <p>
+                {% trans "AGBOVILLE - M'BERIÉ, sous préfecture de GRAND-MORIÉ, Côte d'Ivoire" %}
+              </p>
+            </div>
+          </div>
+    
+          <!-- Réseaux sociaux -->
+          <div class="footer-col">
+            <div class="footer_contact">
+              <div class="footer_social">
+                <a href=""><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+                <a href=""><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+                <a href=""><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href=""><i class="fa-brands fa-pinterest" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Copyright -->
+        
+        <p class="text-center" id="copyright">
+          Groupe Mopakam &copy; 2025
+          <script>
+              const currentYear = new Date().getFullYear();
+              const creationYear = 2025;
+              if (currentYear > creationYear) {
+                  document.write(' - ' + currentYear);
+              }
+          </script>
+          <br>
+          Powered by 
+          <a href="https://onma.io/" target="_blank">
+              <img src="{% static 'images/logo/onma.png' %}" alt="Onma logo" height="5" style="width: 70px; height: auto;">
+          </a>
+      </p>
+      
+    <div>
+
+  </footer>
+
+
+  <!-- Charger les fichiers statiques -->
+
+
+  
+
+  <a href="#" class="arrow" title="{% trans 'Retour en haut' %}"><i class="fa fa-chevron-up btn_height"></i></a>
+  
+  <!-- jQuery -->
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  
+  <!-- Popper JS -->
+  <script src="{% static 'js/popper.min.js' %}" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  
+  <!-- Bootstrap JS -->
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  
+  <!-- Owl Slider -->
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  
+  <!-- Isotope JS -->
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+  
+  <!-- Nice Select -->
+  <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+  
+  <!-- Custom JS -->
+  <script src="{% static 'js/custom.js' %}"></script>
+  
+  <!-- Google Map (external) -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  
+  <!-- Additional custom JS files -->
+  <script defer src="{% static 'js/script.js' %}"></script>
+  <script defer src="{% static 'js/form_transition.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous">
+  </script>
+
+
+      
+  <!-- Chatbot -->
+  <div class="chatbot-button" id="chatbotButton">
+    <i class="fas fa-comments"></i>
+  </div>
+
+  <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+      <h5>{% trans "Assistant Mopakam" %}</h5>
+      <button class="close-btn" id="closeChatbot">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="chatbot-messages" id="chatbotMessages">
+      <!-- Les messages s'afficheront ici -->
+    </div>
+    <div class="chatbot-input">
+      <input type="text" id="userInput" placeholder="{% trans 'Écrivez votre message...' %}">
+      <button id="sendMessage">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <style>
+    .chatbot-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color:rgb(5, 124, 33);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    .chatbot-button i {
+      color: white;
+      font-size: 24px;
+    }
+
+    .chatbot-container {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      width: 350px;
+      height: 500px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: none;
+      flex-direction: column;
+      z-index: 1000;
+    }
+
+    .chatbot-header {
+      padding: 15px;
+      background:rgb(5, 124, 33);
+      color: white;
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chatbot-header h5 {
+      margin: 0;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .chatbot-messages {
+      flex-grow: 1;
+      padding: 15px;
+      overflow-y: auto;
+    }
+
+    .chatbot-input {
+      padding: 15px;
+      border-top: 1px solid #eee;
+      display: flex;
+      gap: 10px;
+    }
+
+    .chatbot-input input {
+      flex-grow: 1;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      outline: none;
+    }
+
+    .chatbot-input button {
+      background: rgb(5, 124, 33);
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatbotButton = document.getElementById('chatbotButton');
+      const chatbotContainer = document.getElementById('chatbotContainer');
+      const closeChatbot = document.getElementById('closeChatbot');
+      const userInput = document.getElementById('userInput');
+      const sendMessage = document.getElementById('sendMessage');
+      const chatbotMessages = document.getElementById('chatbotMessages');
+  
+      chatbotButton.addEventListener('click', function() {
+          chatbotContainer.style.display = 'flex';
+      });
+  
+      closeChatbot.addEventListener('click', function() {
+          chatbotContainer.style.display = 'none';
+      });
+  
+      function addMessage(message, isUser = false) {
+          const messageDiv = document.createElement('div');
+          messageDiv.style.marginBottom = '10px';
+          messageDiv.style.padding = '8px 12px';
+          messageDiv.style.borderRadius = '20px';
+          messageDiv.style.maxWidth = '80%';
+          messageDiv.style.alignSelf = isUser ? 'flex-end' : 'flex-start';
+          messageDiv.style.background = isUser ? '#007bff' : '#f0f0f0';
+          messageDiv.style.color = isUser ? 'white' : 'black';
+          messageDiv.textContent = message;
+          chatbotMessages.appendChild(messageDiv);
+          chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+  
+      function sendMessageToBackend(message) {
+          fetch('/chat/', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'X-CSRFToken': getCookie('csrftoken')  // Add CSRF token
+              },
+              body: JSON.stringify({ message: message })
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (data.response) {
+                  addMessage(data.response);
+              } else if (data.error) {
+                  addMessage("Une erreur s'est produite. Veuillez réessayer.");
+              }
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              addMessage("Erreur de connexion. Veuillez vérifier votre connexion internet.");
+          });
+      }
+  
+      // CSRF Token retrieval function
+      function getCookie(name) {
+          let cookieValue = null;
+          if (document.cookie && document.cookie !== '') {
+              const cookies = document.cookie.split(';');
+              for (let i = 0; i < cookies.length; i++) {
+                  const cookie = cookies[i].trim();
+                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                      break;
+                  }
+              }
+          }
+          return cookieValue;
+      }
+  
+      sendMessage.addEventListener('click', function() {
+          const message = userInput.value.trim();
+          if (message) {
+              addMessage(message, true);
+              userInput.value = '';
+              sendMessageToBackend(message);
+          }
+      });
+  
+      userInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+              sendMessage.click();
+          }
+      });
+  });
+  </script>
+</main>
+</body>
+<script>
+  $(document).ready(function(){
+    $(".client_owl-carousel").owlCarousel({
+      loop: true,           // {% trans "Boucle infinie" %}
+      margin: 10,           // {% trans "Espacement entre les items" %}
+      nav: false,           // {% trans "Masquer les flèches de navigation" %}
+      dots: true,           // {% trans "Afficher les indicateurs" %}
+      autoplay: true,       // {% trans "Activer le défilement automatique" %}
+      autoplayTimeout: 2000, // {% trans "Changer d'élément toutes les 2 secondes" %}
+      autoplayHoverPause: true, // {% trans "Mettre en pause au survol" %}
+      responsive:{
+        0:{ items: 1 },   // {% trans "élément visible sur mobile" %}
+        600:{ items: 1 }, // {% trans "élément visible sur tablette" %}
+        1000:{ items: 2 } // {% trans "éléments visibles sur desktop" %}
+      }
+    });
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var offcanvasElementList = [].slice.call(document.querySelectorAll('.offcanvas'))
+    var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
+        return new bootstrap.Offcanvas(offcanvasEl)
+    })
+});
+</script>
+
+</html>

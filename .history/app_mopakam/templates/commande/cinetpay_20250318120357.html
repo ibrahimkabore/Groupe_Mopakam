@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% comment %} <script src="https://cdn.cinetpay.com/seamless/main.js"></script> {% endcomment %}
+    <script src="https://api-checkout.cinetpay.com/v2/payment"></script>
+    <style>
+        .sdk {
+            display: block;
+            position: absolute;
+            background-position: center;
+            text-align: center;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <script>
+
+        var axios = require('axios');
+        var data = JSON.stringify({
+          "apikey": "191723936667c0d7c0d48656.82804730",
+          "site_id": "105888863",
+          "transaction_id":  Math.floor(Math.random() * 100000000).toString(), //
+          "amount": 100,
+          "currency": "XOF",
+          "alternative_currency": "",
+          "description": " TEST INTEGRATION ",
+          "customer_id": "172",
+          "customer_name": "KOUADIO",
+          "customer_surname": "Francisse",
+          "customer_email": "harrissylver@gmail.com",
+          "customer_phone_number": "+225004315545",
+          "customer_address": "Antananarivo",
+          "customer_city": "Antananarivo",
+          "customer_country": "CM",
+          "customer_state": "CM",
+          "customer_zip_code": "065100",
+          "notify_url": "https://",
+          "return_url": "http://127.0.0.1:8000/fr/products",
+          "channels": "ALL",
+          "metadata": "user1",
+          "lang": "FR",
+          "invoice_data": {
+            "Donnee1": "",
+            "Donnee2": "",
+            "Donnee3": ""
+          }
+        });
+    
+        var config = {
+          method: 'post',
+          url: 'https://api-checkout.cinetpay.com/v2/payment',
+          headers: { 
+            'Content-Type': 'application/json'
+          },
+          data : data
+        };
+    
+        axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    
+
+    </script>
+</head>
+<body>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+    .payment-container {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 50px auto;
+        width: 500px;
+    }
+    .payment-container h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .payment-container button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .payment-container button:hover {
+        background-color: #3e8e41;
+    }
+</style>
+<div class="payment-container">
+    <h1>Paiement sécurisé</h1>
+    <p>Vous allez être redirigé vers la page de paiement de CinetPay.</p>
+    <button onclick="checkout()">Payer</button>
+</div>
+</body>
+</html>  
+
+
+

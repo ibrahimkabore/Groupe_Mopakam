@@ -1,0 +1,71 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <script>
+        function checkout() {
+            try {
+                if (typeof CinetPay === "undefined") {
+                    console.error("Erreur : CinetPay SDK non chargé.");
+                    alert("Impossible d'initialiser le paiement. Veuillez réessayer.");
+                    return;
+                }
+
+                CinetPay.setConfig({
+                    apikey: '191723936667c0d7c0d48656.82804730',
+                    site_id: 105888863,
+                    notify_url: 'http://127.0.0.1:8000/orders/',
+                    close_after_response: true,
+                    mode: 'PRODUCTION'
+                });
+
+                CinetPay.getCheckout({
+                    transaction_id: Math.floor(Math.random() * 100000000).toString(),
+                    amount: 1000, 
+                    currency: 'XOF',
+                    channels: 'ALL',
+                    description: 'Test de paiement',
+                    // Informations du client (obligatoires pour paiement par carte bancaire)
+                    customer_name: "Joe",
+                    customer_surname: "Down",
+                    customer_email: "down@test.com",
+                    customer_phone_number: "088767611",
+                    customer_address: "BP 0024",
+                    customer_city: "Antananarivo",
+                    customer_country: "CM", // Code ISO du pays
+                    customer_state: "CM", // Code ISO de l'état
+                    customer_zip_code: "06510" // Code postal
+                });
+
+                CinetPay.waitResponse(function(data) {
+                    console.log("Réponse de CinetPay :", data);
+                    if (data.status === "REFUSED") {
+                        alert("Votre paiement a échoué.");
+                        window.location.reload();
+                    } else if (data.status === "ACCEPTED") {
+                        alert("Votre paiement a été effectué avec succès.");
+                        window.location.reload();
+                    }
+                });
+
+                CinetPay.onError(function(data) {
+                    console.error("Erreur CinetPay :", data);
+                    alert("Une erreur est survenue lors du paiement.");
+                });
+
+            } catch (error) {
+                console.error("Erreur inattendue :", error);
+                alert("Une erreur inattendue est survenue.");
+            }
+        }
+    </script>
+</head>
+ 
+<body>
+    <div class="sdk">
+        <h1>SDK SEAMLESS</h1>
+        <button type="button" onclick="checkout()">Checkout</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+{% load static %}
+{% load i18n %}
+<main>
+    <div class="container cont-contact">
+        <div class="contact-section">
+            <h2>📞 {% trans "CONTACTEZ-NOUS" %}</h2>
+            <p>{% trans "VOUS AVEZ DES QUESTIONS OU SOUHAITEZ EN SAVOIR PLUS SUR NOS PRODUITS FERMIERS ? CONTACTEZ-NOUS DÈS AUJOURD'HUI – NOTRE ÉQUIPE EST LÀ POUR VOUS AIDER AVEC PLAISIR !" %}</p>
+            <p><strong>{% trans "Téléphones :" %}</strong></p>
+            <ul>
+                <li>📞+225 01 50 58 10 26</li>
+                <li>📞+225 05 84 27 08 08</li>
+                <li>📞+225 07 67 04 62 04</li>
+            </ul>
+            <p><strong>{% trans "Adresse :" %}</strong></p>
+            <p>{% trans "AGBOVILLE - M'BERIÉ, SOUS-PRÉFECTURE DE GRAND-MORIÉ, CÔTE D'IVOIRE" %}</p>
+            <p><strong>{% trans "Email :" %}</strong></p>
+            <p>INFO@GROUPEMOPAKAM.COM</p>
+        </div>
+
+        <div class="form-section">
+            <h3>📩 {% trans "Laissez-nous un message" %}</h3>
+            <div class="social-icons">
+                <a href="#"><img src="{% static 'images/imgs/logo/facebook.png' %}" alt="Facebook"></a>
+                <a href="#"><img src="{% static 'images/imgs/logo/google.png' %}" alt="Google" class="logo_go"></a>
+                <a href="#"><img src="{% static 'images/imgs/logo/linkedin.png' %}" alt="LinkedIn"></a>
+            </div>
+            <form method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <input type="text" placeholder="{% trans 'Nom' %}" required name="name" oninput="validateName()" maxlength="30">
+                <input type="email" placeholder="{% trans 'E-mail' %}" required name="email" oninput="validateEmail()">
+                <select id="countryCode" onchange="updatePhonePlaceholder()" name="countryCode">
+                    <option value="+225">Côte d'Ivoire (+225)</option>
+                </select>
+                <input type="tel" placeholder="{% trans 'Téléphone' %}" required name="phone" pattern="\d{10}" inputmode="numeric" id="phone" oninput="validatePhone()" maxlength="10">
+                <textarea name="message" required placeholder="{% trans 'Votre message' %}" oninput="validateMessage()" maxlength="150"></textarea>
+                <div class="bouton">
+                    <button type="submit">{% trans "Envoyer le message" %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Section Google Maps -->
+    <div class="map-container">
+        <h3>📍 {% trans "Localisation" %}</h3>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15872.51880403325!2d-4.143776986431957!3d5.976871995267258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc11411d763c919%3A0xcf52b72f41c928a0!2sGrand%20Mori%C3%A9!5e0!3m2!1sfr!2sci!4v1740221218659!5m2!1sfr!2sci" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</main>
+
+<script>
+    function validateName() {
+        let nameInput = document.querySelector('input[name="name"]');
+        nameInput.value = nameInput.value.replace(/[^a-zA-Z\s]/g, ''); // Supprimer tout sauf les lettres et les espaces
+        if (nameInput.value.length > 30) {
+            nameInput.value = nameInput.value.slice(0, 30);
+        }
+    }
+    
+    function validateEmail() {
+        let emailInput = document.querySelector('input[name="email"]');
+        // Supprimer tous les caractères non valides (ceux qui ne sont pas dans une adresse email standard)
+        emailInput.value = emailInput.value.replace(/[^a-zA-Z0-9@._-]/g, '');
+    }
+    
+    function validatePhone() {
+        let phoneInput = document.getElementById('phone');
+        // Remplacer tout sauf les chiffres
+        phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '');
+       
+        // Limiter la saisie à 10 chiffres
+        if (phoneInput.value.length > 10) {
+            phoneInput.value = phoneInput.value.slice(0, 10);
+        }
+    }
+    
+    function validateMessage() {
+        let messageInput = document.querySelector('textarea[name="message"]');
+        // Limiter la longueur à 150 caractères
+        if (messageInput.value.length > 150) {
+            messageInput.value = messageInput.value.slice(0, 150);
+        }
+    }
+</script>
+{% endblock %}

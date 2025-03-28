@@ -1,0 +1,110 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load humanize %}
+{% block content %}
+<script src="https://cdn.cinetpay.com/seamless/main.js" type="text/javascript"></script>
+<div class="container mt-5">
+    <div class="row">
+        <!-- Résumé de la commande -->
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">{% trans "Validation de la commande" %}</h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title mb-4">{% trans "Articles dans votre panier" %}</h5>
+                    {% for item in cart_items %}
+                    <div class="cart-item mb-3 p-3 border rounded">
+                        <div class="row align-items-center">
+                            <div class="col-md-2">
+                                {% if item.product.image %}
+                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid rounded">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="mb-0">{{ item.product.name }}</h6>
+                                <p class="text-muted">{{ item.product.description|truncatewords:20 }}</p>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <span class="badge bg-secondary">{{ item.quantity }}</span>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                {{ item.product.price|intcomma }} FCFA
+                            </div>
+                            <div class="col-md-2 text-end">
+                                {{ item.total_price|intcomma }} FCFA
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Formulaire de paiement -->
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">{% trans "Mode de paiement" %}</h4>
+                </div>
+                <div class="card-body">
+                    <form action="{% url 'create_order' %}" method="get">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="radio" name="payment_method" id="cash" value="CB" checked>
+                                <label class="form-check-label" for="cash">
+                                    <i class="fas fa-money-bill-wave me-2"></i>{% trans "Carte Bancaire" %}
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="radio" name="payment_method" id="mobile_money" value="MM">
+                                <label class="form-check-label" for="mobile_money">
+                                    <i class="fas fa-mobile-alt me-2"></i>{% trans "Mobile Money" %}
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="radio" name="payment_method" id="mobile_money" value="WA">
+                                <label class="form-check-label" for="mobile_money">
+                                    <i class="fas fa-mobile-alt me-2"></i>{% trans "Wave" %}
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-lg w-100">
+                            <i class="fas fa-check-circle me-2"></i>{% trans "Confirmer la commande" %}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Résumé des totaux -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">{% trans "Récapitulatif" %}</h4>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>{% trans "Sous-total" %}</span>
+                        <strong>{{ subtotal|intcomma }} FCFA</strong>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>{% trans "Frais de livraison" %}</span>
+                        <span>{% trans "Gratuit" %}</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-3">
+                        <h5>{% trans "Total" %}</h5>
+                        <h5>{{ total|intcomma }} FCFA</h5>
+                    </div>
+                    <div class="mt-4">
+                        <a href="{% url 'product_list' %}" class="btn btn-outline-primary w-100 mb-2">
+                            <i class="fas fa-arrow-left me-2"></i>{% trans "Continuer les achats" %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

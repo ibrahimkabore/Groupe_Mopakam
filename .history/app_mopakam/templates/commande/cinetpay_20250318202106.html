@@ -1,0 +1,60 @@
+<!DOCTYPE html>  
+                <html lang="en">
+                    <head>
+                       
+                        <link rel="stylesheet" href="https://paytech.sn/cdn/paytech.min.css">
+                        <script src="https://paytech.sn/cdn/paytech.min.js"></script>
+                    </head>
+                    <body>
+                        
+                        <button class="buy" onclick="buy(this)" data-item-id="88" >Acheter iphone (450000 XOF)
+                        </button>
+                        
+                        <script>
+                        //or directly use payment/token url if already fetched
+                          function buy() {
+                            (new PayTech({ })).withOption({
+                                    tokenUrl           :   'https://paytech.sn/payment/checkout/405gzpplwambq1e',
+                           
+                                    prensentationMode   :   PayTech.OPEN_IN_POPUP,
+                                  
+                                }).send();
+                          }
+      
+                        </script>
+                        
+                        <script>
+                        
+                        //or use sdk to fetch payment url
+                            function buy(btn) {
+                                (new PayTech({
+                                    some_post_data_1          :   2, //will be sent to paiement.php page
+                                    some_post_data_3          :   4,
+                                })).withOption({
+                                    requestTokenUrl           :   'paiement.php',
+                                    method              :   'POST',
+                                    headers             :   {
+                                        "Accept"          :    "text/html"
+                                    },
+                                    prensentationMode   :   PayTech.OPEN_IN_POPUP,
+                                    willGetToken        :   function () {
+                                       
+                                    },
+                                    didGetToken         : function (token, redirectUrl) {
+                                       
+                                    },
+                                    didReceiveError: function (error) {
+                                       
+                                    },
+                                    didReceiveNonSuccessResponse: function (jsonResponse) {
+                                       
+                                    }
+                                }).send();
+                        
+                                //.send params are optional
+                            }
+                        </script>
+
+                        
+                    </body>
+                 </html>

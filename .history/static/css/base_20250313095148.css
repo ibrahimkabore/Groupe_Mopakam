@@ -1,0 +1,250 @@
+  /* Styles de base */
+  .heading_container h2 {
+    font-size: 2.5rem;
+  }
+  
+  .detail-box h5 {
+    font-size: 1.5rem;
+  }
+  
+  .detail-box p {
+    font-size: 1rem;
+  }
+  
+  /* Style pour l'indicateur du panier */
+  .cart_link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff4444;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    min-width: 18px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .cart_link i {
+    font-size: 1.2rem;
+  }
+  
+  .cart_link:hover {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+  }
+  
+  .cart_link:hover .cart-count {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+  }
+  
+  /* Media queries pour les tablettes */
+  @media screen and (max-width: 768px) {
+    .heading_container h2 {
+      font-size: 2rem;
+    }
+    
+    .detail-box h5 {
+      font-size: 1.3rem;
+    }
+    
+    .detail-box p {
+      font-size: 0.9rem;
+    }
+    
+    .box {
+      margin-bottom: 20px;
+    }
+    
+    .about_section h2 {
+      font-size: 1.8rem;
+    }
+    
+    .client_section h2 {
+      font-size: 1.8rem;
+    }
+    
+    .contact h2 {
+      font-size: 1.8rem;
+    }
+  }
+  
+  /* Media queries pour les mobiles */
+  @media screen and (max-width: 576px) {
+    .heading_container h2 {
+      font-size: 1.5rem;
+    }
+    
+    .detail-box h5 {
+      font-size: 1.1rem;
+    }
+    
+    .detail-box p {
+      font-size: 0.85rem;
+    }
+    
+    .container {
+      padding: 0 15px;
+    }
+    
+    .img-box img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    /* Ajustements pour la section authentification */
+    .container1 {
+      min-height: auto;
+      padding: 20px;
+    }
+    
+    .form-container form {
+      padding: 20px;
+    }
+    
+    .form-container input {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+    
+    .social-icons .icon1,
+    .social-icons1 .icon1 {
+      width: 35px;
+      height: 35px;
+      font-size: 0.9rem;
+    }
+    
+    .toggle-panel h1 {
+      font-size: 1.3rem;
+    }
+    
+    .toggle-panel p {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Optimisations supplémentaires pour très petits écrans */
+  @media screen and (max-width: 320px) {
+    .heading_container h2 {
+      font-size: 1.2rem;
+    }
+    
+    .detail-box h5 {
+      font-size: 1rem;
+    }
+    
+    .detail-box p {
+      font-size: 0.8rem;
+    }
+    
+    .container1 {
+      padding: 10px;
+    }
+  }
+  .caption {
+    font-weight: bold; /* Met le texte en gras */
+    font-style: italic; /* Met le texte en italique */
+    margin-top: 10px; /* Ajoute un espace entre l'image et le texte */
+  }
+  abbr {
+  font-style: italic;
+  color: chocolate;
+  }
+  .parallax-content {
+  padding: 4rem 0;
+  background-color: rgba(23, 130, 63, 0.05);
+  }
+  /* Style de base de la navbar */
+  .navbar {
+      padding: 0.75rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff !important;
+      padding: 0.5rem 0;
+  }
+  
+  /* Style des liens de navigation */
+  .navbar-nav {
+      margin: 0;
+      padding: 0;
+  }
+  
+  .nav-item .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 500;
+      padding: 0.75rem 1rem;
+      transition: all 0.3s ease;
+  }
+  
+  .nav-item .nav-link:hover,
+  .nav-item.active .nav-link {
+      color: #fff !important;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 4px;
+  }
+  
+  /* Style de la section utilisateur */
+  .user-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+  }
+  
+  .user-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: white;
+  }
+  
+  .user-name {
+      color: rgba(255,255,255,0.9);
+  }
+  
+  /* Style du panier */
+  .cart_link {
+      position: relative;
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+  }
+  
+  .cart_link:hover {
+      color: white;
+      opacity: 0.9;
+  }
+  
+  .cart_link i {
+      font-size: 1.2rem;
+  }
+  
+  .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: #ff4444;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 0.75rem;
+      min-width: 18px;
+      text-align: center;
+  font-weight: bold;
